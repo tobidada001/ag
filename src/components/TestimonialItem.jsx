@@ -28,10 +28,8 @@ export default () => {
           </div>
 
           <p className="mt-4 text-gray-700">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa sit
-            rerum incidunt, a consequuntur recusandae ab saepe illo est quia
-            obcaecati neque quibusdam eius accusamus error officiis atque
-            voluptates magnam!
+            AgriPathway has helped my farm produce selling business to grow at a significant rate as I'm able to readily connect with buyers in real time and import local farm products.
+            
           </p>
         </blockquote>
       </div>
