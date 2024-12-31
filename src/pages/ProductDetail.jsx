@@ -1,6 +1,4 @@
 import { useState } from "react";
-import TopBar from "../components/TopBar";
-import Footer from "../components/Footer";
 import star from '/assets/star.svg';
 
 export default () => {
@@ -22,10 +20,6 @@ export default () => {
 
   return (
     <>
-
-    <TopBar />
-
-
       <div className="container mx-auto px-4 py-8">
         <div className="flex flex-wrap -mx-4">
           <div className="w-full md:w-1/2 px-4 mb-8">
@@ -452,10 +446,6 @@ export default () => {
         </div>
       </section>
 
-
-
-
-      <Footer />
     </>
   );
 };

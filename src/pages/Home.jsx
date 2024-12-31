@@ -1,20 +1,13 @@
 import React from 'react';
-import TopBar from '../components/TopBar';
-
 import HomePageCategorySection from '../components/HomePageCategorySection';
 import FeaturedCrops from '../components/FeaturedCrops';
 import HowItWorks from '../components/HowItWorks';
 import Testimonials from '../components/Testimonials';
 import { Link } from 'react-router-dom';
-import Footer from '../components/Footer';
 
 const Home = () => (
 
     <>
-
-    <TopBar />
-
-
     <div className="relative bg-green-600 text-white">
       {/* Background */}
       <div className="absolute inset-0 bg-cover opacity-70" style={{ backgroundImage: "url('/assets/images/countryside-woman-holding-plant-leaves.jpg')" }}></div>
@@ -28,7 +21,7 @@ const Home = () => (
           <p className="text-lg text-white/90">
             Buy crops directly from Nigerian farmers at the best prices. Support local agriculture and enjoy farm-fresh quality.
           </p>
-          <div className="mt-6 flex justify-center lg:justify-start gap-4">
+          <div className="mt-6 flex flex-col md:flex-row justify-center lg:justify-start gap-4">
             <button className="bg-yellow-400 text-green-800 hover:bg-yellow-500 px-6 py-3 rounded-lg text-lg font-medium">
               Explore Products
             </button>
@@ -63,9 +56,6 @@ const Home = () => (
         <Link className='bg-green-800 text-white border-2 hover:text-green-800 hover:border-green-800 rounded-lg hover:bg-transparent font-semibold  px-6 py-4 mt-10'>Register as a Farmer</Link>
 
     </div>
-
-  
-    <Footer />
 
   </>
 );

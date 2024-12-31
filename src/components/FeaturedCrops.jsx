@@ -43,7 +43,7 @@ const FeaturedCrops = () => {
         </div>
 
         <div className="text-center mt-12">
-            <Link className="bg-green-800 text-white px-6 py-3 rounded-lg hover:bg-green-700 font-medium">See More Crops</Link>
+            <Link to={'/products'} className="bg-green-800 text-white px-6 py-3 rounded-lg hover:bg-green-700 font-medium">See More Crops</Link>
         </div>
 
       </div>

@@ -1,14 +1,7 @@
 import { Link } from "react-router-dom"
-import Footer from "../components/Footer"
-import TopBar from "../components/TopBar"
 
 export default () => {
     return (
-
-        <>
-
-        <TopBar />
-
         <main className="w-full h-screen  flex flex-col items-center justify-center px-4">
             <div className="max-w-sm w-full text-gray-600 space-y-5">
                 <div className="text-center pb-8">
@@ -79,8 +72,5 @@ export default () => {
             </div>
         </main>
 
-
-        <Footer />
-        </>
     )
 }

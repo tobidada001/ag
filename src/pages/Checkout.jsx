@@ -1,16 +1,8 @@
-import Footer from "../components/Footer";
 import OrderItem from "../components/OrderItem";
-import TopBar from "../components/TopBar";
 
 export default () => {
   return (
     <>
-
-        <TopBar />
-
-
-
-
       {/* <!-- Breadcrumb --> */}
       <div className="container mx-auto my-6 px-6 text-sm text-gray-500">
         Account / My Account / Product / View Cart /{" "}
@@ -182,10 +174,6 @@ export default () => {
           </div>
         </div>
       </div>
-
-
-
-      <Footer />
     </>
   );
 };

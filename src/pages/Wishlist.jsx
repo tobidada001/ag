@@ -1,15 +1,8 @@
-import Footer from "../components/Footer";
-import TopBar from "../components/TopBar";
 import WishListItem from "../components/WishListItem";
 
 export default () => {
   return (
     <>
-
-    <TopBar />
-
-
-
       <div className="max-w-6xl mx-auto px-4 py-6">
         <h1 className="text-3xl font-bold mb-2">Your Wishlist</h1>
         <p className="text-gray-600 mb-6">
@@ -40,10 +33,6 @@ export default () => {
           </table>
         </div>
       </div>
-
-
-
-      <Footer />
     </>
   );
 };

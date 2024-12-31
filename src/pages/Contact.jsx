@@ -1,6 +1,4 @@
 import { useState } from "react";
-import Footer from "../components/Footer";
-import TopBar from "../components/TopBar";
 
 export default () => {
   const [phoneNumber, setPhoneNumber] = useState("");
@@ -11,20 +9,16 @@ export default () => {
   };
 
   return (
-    <>
-      <TopBar />
-
+  
       <main className="py-5 flex">
-
-      
-
-      <div className="w-1/2 hidden lg:block">
-          <img src="/assets/images/countryside-woman-holding-plant-leaves.jpg" className="h-screen"/>
+        <div className="w-1/2 hidden lg:block">
+          <img
+            src="/assets/images/countryside-woman-holding-plant-leaves.jpg"
+            className="h-screen"
+          />
         </div>
 
-
-
-        <div className=" w-1/2 mx-auto px-4 text-gray-600 md:px-8">
+        <div className=" lg:w-1/2 mx-auto px-4 text-gray-600 md:px-8">
           <div className="max-w-lg mx-auto space-y-3 sm:text-center">
             <h1 className="text-green-800 text-3xl font-semibold sm:text-4xl">
               Get in touch
@@ -90,12 +84,7 @@ export default () => {
             </form>
           </div>
         </div>
-
-
-
       </main>
 
-      <Footer />
-    </>
   );
 };

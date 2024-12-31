@@ -14,11 +14,17 @@ import Wishlist from './pages/Wishlist';
 import Checkout from './pages/Checkout';
 import Products from './pages/Products';
 import Cart from './pages/Cart';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 // import Products from './pages/Products';
 // import ContactUs from './pages/ContactUs';
 
 const Main = () => (
+
   <Router>
+    <Navbar />
+
+
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/login" element={<Login />} />
@@ -33,12 +39,27 @@ const Main = () => (
       {/* <Route path="/products" element={<Products />} /> */}
       <Route path="*" element={<NotFound />} />
     </Routes>
+
+
+
+    {/* Footer Section */}
+  <Footer />
   </Router>
 );
 
 
 createRoot(document.getElementById('root')).render(
+
+  <>
+   {/* Navbar section */}
+   
+
   <StrictMode>
     <Main />
-  </StrictMode>,
+    
+
+  </StrictMode>
+
+  
+  </>,
 )
