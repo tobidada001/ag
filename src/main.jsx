@@ -11,9 +11,11 @@ import LoadingSpinner from './components/LoadingSpinner';
 
 // Lazy-loaded pages
 const Home = lazy(() => import('./pages/Home'));
+const Reg = lazy(() => import('./pages/Reg'));
 const Login = lazy(() => import('./pages/Login'));
-const UserRegister = lazy(() => import('./pages/Register'))
-const FarmerRegistration = lazy(() => import('./pages/FarmerRegister'));
+// const UserRegister = lazy(() => import('./pages/Reg'))
+// const UserRegister = lazy(() => import('./pages/Register'))
+// const FarmerRegistration = lazy(() => import('./pages/FarmerRegister'));
 const Contact = lazy(() => import('./pages/Contact'));
 const Products = lazy(() => import('./pages/Products'));
 const ProductDetail = lazy(() => import('./pages/ProductDetail'));
@@ -30,9 +32,11 @@ const Main = () => (
     <Suspense fallback={<LoadingSpinner />}>
       <Routes>
         <Route path="/" element={<Home />} />
+        {/* <Route path="/reg" element={<Reg />} /> */}
         <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<UserRegister />} />
-        <Route path="/farmer-registration" element={<FarmerRegistration />} />
+        <Route path="/register" element={<Reg />} />
+        {/* <Route path="/register" element={<UserRegister />} /> */}
+        {/* <Route path="/farmer-registration" element={<FarmerRegistration />} /> */}
         {/* <Route path="/signup" element={<SignupForm />} /> */}
         {/* <Route path="/farmer-registration" element={<FarmerRegistrationPage />} /> */}
         <Route path="/contact" element={<Contact />} />

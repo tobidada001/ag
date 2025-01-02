@@ -15,7 +15,7 @@ const FarmerRegistration = () => {
       
     <div className="min-h-screen bg-gray-100 flex flex-col items-center justify-center">
 
-    <h1 className="text-gray-900 text-4xl mb-10 mt-16">Create your farmer account</h1>
+    <h2 class="mt-10 mb-5 text-center text-3xl  font-extrabold text-gray-900">Create your account</h2>
 
     <Link to={'/'} className="border-b-2 border-green-700 text-green-700">Back to Home</Link>
 
@@ -104,7 +104,7 @@ const FarmerRegistration = () => {
           <div>
             <h2 className="text-2xl font-semibold mb-4">Step 2: Farm Details</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div>
+              {/* <div>
                 <label className="block text-sm font-medium text-gray-700">
                   Farm Name
                 </label>
@@ -112,7 +112,7 @@ const FarmerRegistration = () => {
                   type="text"
                   className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500"
                 />
-              </div>
+              </div> */}
               <div>
                 <label className="block text-sm font-medium text-gray-700">
                   Farm Address/Location
@@ -124,7 +124,7 @@ const FarmerRegistration = () => {
               </div>
               <div>
                 <label className="block text-sm font-medium text-gray-700">
-                  Farm Size
+                  What products do you sell?
                 </label>
                 <input
                   type="text"
@@ -133,9 +133,9 @@ const FarmerRegistration = () => {
               </div>
               <div>
                 <label className="block text-sm font-medium text-gray-700">
-                  Type of Farming
+                  Product(s) Category
                 </label>
-                <select
+                <select multiple
                   className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500"
                 >
                   <option>Crop Farming</option>

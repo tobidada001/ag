@@ -1,26 +1,28 @@
+import { BadgeDollarSign, CalendarArrowUp, CircleUser, ListCheck, ListOrdered } from 'lucide-react';
 import React from 'react';
+
 
 const HowItWorks = () => {
   const steps = [
     {
       title: 'Sign Up',
       description: 'Create an account on our platform with your basic details.',
-      icon: '/icons/signup.svg',
+      icon: <CircleUser />,
     },
     {
       title: 'List Your Crops',
       description: 'Add the crops you have available, including prices and quantities.',
-      icon: '/icons/list-crops.svg',
+      icon: <ListOrdered />,
     },
     {
       title: 'Receive Orders',
       description: 'Customers will place orders, and you’ll be notified instantly.',
-      icon: '/icons/orders.svg',
+      icon: <CalendarArrowUp />,
     },
     {
       title: 'Deliver & Earn',
       description: 'Fulfill the orders and get paid directly into your account.',
-      icon: '/icons/deliver.svg',
+      icon: <BadgeDollarSign />,
     },
   ];
 
@@ -39,7 +41,8 @@ const HowItWorks = () => {
             <div key={index} className="bg-white rounded-lg shadow hover:shadow-lg transition duration-300 p-6 text-center">
               {/* Icon */}
               <div className="flex justify-center items-center h-16 w-16 mx-auto mb-4 bg-green-100 rounded-full">
-                <img src={step.icon} alt={`${step.title} icon`} className="h-8 w-8" />
+                {/* <img src={step.icon} alt={`${step.title} icon`} className="h-8 w-8" /> */}
+                {step.icon}
               </div>
               {/* Content */}
               <h3 className="text-xl font-bold text-gray-700">{step.title}</h3>

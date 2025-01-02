@@ -42,13 +42,13 @@ const Home = () => {
                   to={'/register'}
                   className="bg-yellow-400 text-green-800 hover:bg-yellow-500 px-6 py-3 rounded-lg text-lg font-medium"
                 >
-                  Register as a Buyer
+                  Create an account
                 </Link>
                 <Link
-                  to={'/farmer-registration'}
+                  to={'/about'}
                   className="bg-transparent border border-yellow-400 hover:border-yellow-500 hover:bg-yellow-500 text-white px-6 py-3 rounded-lg text-lg font-medium"
                 >
-                  Register as a Farmer
+                  Learn More
                 </Link>
               </div>
             </div>
@@ -65,7 +65,7 @@ const Home = () => {
         <h2 className="text-4xl font-semibold text-center">
           Are you ready to bring your farm produce to more consumers?
         </h2>
-        <Link className="bg-green-800 text-white border-2 hover:text-green-800 hover:border-green-800 rounded-lg hover:bg-transparent font-semibold px-6 py-4 mt-10">
+        <Link to={'/register'} className="bg-green-800 text-white border-2 hover:text-green-800 hover:border-green-800 rounded-lg hover:bg-transparent font-semibold px-6 py-4 mt-10">
           Register as a Farmer
         </Link>
       </div>
