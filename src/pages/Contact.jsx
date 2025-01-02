@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import sideimage from '../assets/images/countryside-woman-holding-plant-leaves.jpg'
 export default () => {
   const [phoneNumber, setPhoneNumber] = useState("");
 
@@ -10,10 +10,10 @@ export default () => {
 
   return (
   
-      <main className="py-5 flex">
+      <main className="py-5 flex mt-16">
         <div className="w-1/2 hidden lg:block">
           <img
-            src="/assets/images/countryside-woman-holding-plant-leaves.jpg"
+            src={sideimage}
             className="h-screen"
           />
         </div>

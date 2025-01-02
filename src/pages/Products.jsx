@@ -1,6 +1,12 @@
 import React from "react";
 import ProductCard from "../components/ProductCard";
 import ProductListSidebar from "../components/ProductListSidebar";
+import rice from "../assets/images/rice.jpeg";
+import tomato from "../assets/images/tomato.jpeg";
+import cocoyam from "../assets/images/cocoyam.jpeg";
+import potato from "../assets/images/potato.jpeg";
+import pepper from "../assets/images/pepper.jpeg";
+
 
 const Products = () => {
   const products = [
@@ -9,34 +15,34 @@ const Products = () => {
       name: "Fresh Tomatoes",
       category: "Vegetables",
       price: "₦5,000 per basket",
-      image: "/assets/images/tomato.jpeg",
+      image: tomato,
     },
     {
       id: 2,
       name: "Golden Bananas",
       category: "Fruits",
       price: "₦15,000 per bunch",
-      image: "/assets/images/tomato.jpeg",
+      image: pepper,
     },
     {
       id: 3,
       name: "Sweet Potatoes",
       category: "Tubers",
       price: "₦9,000 per basket",
-      image: "/assets/images/tomato.jpeg",
+      image: potato,
     },
     {
       id: 4,
       name: "Basmati Rice",
       category: "Grains",
       price: "₦105,000 per bag",
-      image: "/assets/images/tomato.jpeg",
+      image: rice,
     },
   ];
 
   return (
     <>
-      <div className="flex flex-col lg:flex-row gap-6 max-w-7xl mx-auto p-4">
+      <div className="flex flex-col lg:flex-row gap-6 max-w-7xl mt-20 mx-auto p-4">
         {/* Sidebar */}
         <ProductListSidebar />
 

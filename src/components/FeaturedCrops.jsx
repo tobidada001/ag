@@ -1,13 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import rice from "../assets/images/rice.jpeg";
+import tomato from "../assets/images/tomato.jpeg";
+import cocoyam from "../assets/images/cocoyam.jpeg";
+import potato from "../assets/images/potato.jpeg";
+import pepper from "../assets/images/pepper.jpeg";
+
 const FeaturedCrops = () => {
   const featuredCrops = [
-    { name: 'Tomatoes', image: '/assets/images/tomato.jpeg', price: '₦5,000 per basket', description: 'Fresh and juicy, perfect for your stews.' },
-    { name: 'Rice', image: '/assets/images/rice.jpeg', price: '₦20,000 per 50kg bag', description: 'Premium quality long-grain rice.' },
-    { name: 'Yam', image: '/assets/images/cocoyam.jpeg', price: '₦800 per tuber', description: 'Big and starchy, directly from the farm.' },
-    { name: 'Pepper', image: '/assets/images/pepper.jpeg', price: '₦3,000 per basket', description: 'Spicy and fresh for your favorite dishes.' },
-    { name: 'Groundnuts', image: '/assets/images/potato.jpeg', price: '₦2,500 per bag', description: 'Rich and crunchy, great for snacks.' },
+    { name: 'Tomatoes', image: rice, price: '₦5,000 per basket', description: 'Fresh and juicy, perfect for your stews.' },
+    { name: 'Rice', image: tomato, price: '₦20,000 per 50kg bag', description: 'Premium quality long-grain rice.' },
+    { name: 'Yam', image: cocoyam, price: '₦800 per tuber', description: 'Big and starchy, directly from the farm.' },
+    { name: 'Pepper', image: potato, price: '₦3,000 per basket', description: 'Spicy and fresh for your favorite dishes.' },
+    { name: 'Groundnuts', image: pepper, price: '₦2,500 per bag', description: 'Rich and crunchy, great for snacks.' },
   ];
 
   return (

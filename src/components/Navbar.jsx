@@ -15,7 +15,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="bg-green-600 text-white">
+    <nav className="bg-green-600 text-white fixed top-0 w-full z-50 ">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
@@ -91,7 +91,7 @@ const Navbar = () => {
         >
           <div className="px-4 pt-5 pb-3 space-y-1">
             <div className="flex items-center justify-between">
-              <div className="font-bold text-xl">AgroCommerce</div>
+              <div className="font-bold text-xl">AgriPathway</div>
               <button
                 onClick={toggleMenu}
                 className="rounded-md text-gray-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-white"

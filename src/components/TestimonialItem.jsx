@@ -1,4 +1,5 @@
-import userimg from '/assets/icons/user.png';
+import userimg from '../assets/icons/user.png';
+import greenstar from '../assets/icons/greenstar.svg';
 
 export default () => {
   return (
@@ -14,10 +15,10 @@ export default () => {
 
             <div>
               <div className="flex justify-center gap-0.5 text-green-500">
-                <img src="/assets/icons/greenstar.svg" height={25} width={25} />
-                <img src="/assets/icons/greenstar.svg" height={25} width={25} />
-                <img src="/assets/icons/greenstar.svg" height={25} width={25} />
-                <img src="/assets/icons/greenstar.svg" height={25} width={25} />
+                <img src={greenstar} height={25} width={25} />
+                <img src={greenstar} height={25} width={25} />
+                <img src={greenstar} height={25} width={25} />
+                <img src={greenstar} height={25} width={25} />
                
               </div>
 

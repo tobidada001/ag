@@ -1,4 +1,4 @@
-import tomato from '/assets/images/tomato.jpeg'
+import tomato from '../assets/images/tomato.jpeg'
 
 export default () => {
   return (
@@ -12,7 +12,7 @@ export default () => {
           />
           <div>
             <h3 className="text-sm font-semibold text-gray-700">
-              Wireless Headphones
+              Olatife Farms Tomato
             </h3>
             <span className="text-xs text-gray-500">Qty: 1</span>
           </div>

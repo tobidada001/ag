@@ -1,12 +1,7 @@
+import FooterSocials from "./FooterSocials";
 
 export default () => {
-  const socialLinks = [
-    { icon: '/assets/icons/facebook.svg', href: 'https://facebook.com' },
-    { icon: '/assets/icons/twitter.svg', href: 'https://twitter.com' },
-    { icon: '/assets/icons/instagram.svg', href: 'https://instagram.com' },
-    { icon: '/assets/icons/linkedin.svg', href: 'https://linkedin.com' },
-  ];
-
+ 
   return (
     <footer className="bg-green-800 mt-10 text-white py-12">
       <div className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-20">
@@ -85,19 +80,10 @@ export default () => {
           <p className="text-gray-100 text-sm">
             © {new Date().getFullYear()} AgriPathway. All Rights Reserved.
           </p>
-          <div className="flex space-x-4 mt-4 lg:mt-0">
-            {socialLinks.map((link, index) => (
-              <a
-                key={index}
-                href={link.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:opacity-75"
-              >
-                <img src={link.icon} alt="social-icon" className="h-6 w-6" />
-              </a>
-            ))}
-          </div>
+         
+         
+         {/* Social Links */}
+          <FooterSocials />
         </div>
       </div>
     </footer>

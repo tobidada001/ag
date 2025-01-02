@@ -1,3 +1,4 @@
+import { ShoppingCart } from "lucide-react";
 import { Link } from "react-router-dom";
 
 
@@ -22,17 +23,8 @@ const ProductCard = ({ product }) => (
         {/* Add to Cart Button */}
         <button
           className="bg-yellow-400 hover:bg-yellow-500 font-semibold text-gray-800 py-2 px-4 rounded flex items-center gap-2"
-          aria-label="Add to cart"
-        >
-          {/* Cart Icon */}
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="w-5 h-5"
-            fill="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path d="M10 20c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm7-2c0 1.105.895 2 2 2s2-.895 2-2-.895-2-2-2-2 .895-2 2zm1.333-8h5.637c.553 0 .961.447.851 1-.333 1.667-1.667 7.333-2 9-.11.553-.598 1-1.187 1h-11c-.553 0-1-.447-1-1s.447-1 1-1h10.039l.445-2h-7.636c-.475 0-.912-.316-1.016-.789l-1.423-6.164-1.106-2.536h-3.494c-.553 0-1-.447-1-1s.447-1 1-1h4c.413 0 .784.253.936.632l1.486 3.432h8.392c.483 0 .904.343.991.816z" />
-          </svg>
+          aria-label="Add to cart">
+          <ShoppingCart color="#444" />     
           Add to Cart
         </button>
 

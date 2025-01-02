@@ -1,4 +1,5 @@
-
+import { Trash2 } from 'lucide-react';
+import tomato from '../assets/images/tomato2.png';
 
 const WishListItem = () => {
 
@@ -9,7 +10,7 @@ const WishListItem = () => {
     </td>
     <td className="py-4 px-4 flex items-center gap-4">
       <img
-        src="https://picsum.photos/50/50?random=1"
+        src={tomato}
         alt="Organic Banana"
         className="h-10 w-10 rounded-md"
       />
@@ -31,11 +32,8 @@ const WishListItem = () => {
     </td>
     <td className="py-4 px-4 text-center">
       <button className="text-gray-400 hover:text-red-600">
-        <img
-          src="https://cdn.jsdelivr.net/npm/bootstrap-icons/icons/trash.svg"
-          alt="Remove"
-          className="h-5 w-5"
-        />
+      
+        <Trash2 className='hover:text-red-500'/>
       </button>
     </td>
   </tr>

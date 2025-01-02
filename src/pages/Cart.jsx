@@ -3,7 +3,7 @@ import CartItem from "../components/CartItem";
 import { Link } from "react-router-dom";
 export default () => {
   return (
-    <div class="font-sans md:max-w-6xl max-md:max-w-xl mx-auto bg-white py-4">
+    <div class="font-sans md:max-w-6xl max-md:max-w-xl mx-auto bg-white py-4 mt-16">
       <h2 class="text-2xl font-bold text-gray-800">Cart</h2>
       <hr class="border-gray-300 mt-4 mb-8" />
 

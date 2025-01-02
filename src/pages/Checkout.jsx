@@ -4,7 +4,7 @@ export default () => {
   return (
     <>
       {/* <!-- Breadcrumb --> */}
-      <div className="container mx-auto my-6 px-6 text-sm text-gray-500">
+      <div className="container mx-auto mt-28 mb-6  px-6 text-sm text-gray-500">
         Account / My Account / Product / View Cart /{" "}
         <span className="text-black">Checkout</span>
       </div>
