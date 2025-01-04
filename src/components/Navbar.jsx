@@ -37,20 +37,24 @@ const Navbar = () => {
           </div>
 
           {/* Cart, User Icons, and Login Button */}
-          <div className="hidden md:flex items-center space-x-4">
+          <div className="flex items-center absolute md:relative right-0 mr-12 md:space-x-4">
             <Link to={"/cart"} className="p-2 hover:bg-green-700 rounded-full">
               <ShoppingCart className="h-6 w-6" />
             </Link>
             <Link to={"/account"} className="p-2 hover:bg-green-700 rounded-full">
               <User className="h-6 w-6" />
             </Link>
-            <Link to={"/login"} className="hover:bg-green-700 px-3 py-2 rounded-md text-sm font-medium">
+            <Link to={"/login"} className="hover:bg-green-700 hidden md:block px-3 py-2 rounded-md text-sm font-medium">
               Login
             </Link>
           </div>
 
+          
+
+
           {/* Mobile menu button */}
           <div className="md:hidden">
+
             <button
               onClick={toggleMenu}
               className="inline-flex items-center justify-center p-2 rounded-md hover:bg-green-700 focus:outline-none"
@@ -65,6 +69,21 @@ const Navbar = () => {
             </button>
           </div>
         </div>
+
+
+
+
+  {/* Search Bar */}
+          <div className='md:hidden block mb-2'>
+              <form>
+                <input type='search' className='rounded-md outline-none text-sm text-black w-full' placeholder='Search product or category' />
+              </form>
+            </div>
+
+
+
+
+
       </div>
 
       {/* Off-canvas Mobile Menu */}
