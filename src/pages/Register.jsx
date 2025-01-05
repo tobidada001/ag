@@ -53,7 +53,7 @@ const Register = () => {
   }
 
   return (
-    <div className="min-h-screen bg-green-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8 mt-10">
+    <div className="min-h-screen bg-green-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8 ">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
         {/* Left side image */}
         <div className="hidden md:block">

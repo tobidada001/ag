@@ -22,7 +22,7 @@ export default () => {
 
   return (
     <>
-      <div className="container mx-auto px-4 py-8 mt-20">
+      <div className="container mx-auto px-4 py-8 ">
         <div className="flex flex-wrap -mx-4">
           <div className="w-full md:w-1/2 px-4 mb-8">
             <img

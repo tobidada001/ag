@@ -35,10 +35,6 @@ const Main = () => (
         {/* <Route path="/reg" element={<Reg />} /> */}
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Reg />} />
-        {/* <Route path="/register" element={<UserRegister />} /> */}
-        {/* <Route path="/farmer-registration" element={<FarmerRegistration />} /> */}
-        {/* <Route path="/signup" element={<SignupForm />} /> */}
-        {/* <Route path="/farmer-registration" element={<FarmerRegistrationPage />} /> */}
         <Route path="/contact" element={<Contact />} />
         <Route path="/products" element={<Products />} />
         <Route path="/product-detail" element={<ProductDetail />} />
@@ -52,7 +48,7 @@ const Main = () => (
       </Routes>
     </Suspense>
 
-    {/* Footer Section */}
+    
     <Footer />
   </Router>
 );

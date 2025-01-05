@@ -10,7 +10,7 @@ export default () => {
 
   return (
   
-      <main className="py-5 flex mt-16">
+      <main className="py-5 flex">
         <div className="w-1/2 hidden lg:block">
           <img
             src={sideimage}

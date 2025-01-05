@@ -22,7 +22,7 @@ const Home = () => {
   return (
     <>
       {!imageLoaded ? <LoadingSpinner />: (
-        <div className="relative bg-green-600 text-white mt-16">
+        <div className="relative bg-green-600 text-white">
           {/* Background */}
           <div
             className="absolute inset-0 bg-cover opacity-70"

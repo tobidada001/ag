@@ -3,12 +3,6 @@ import OrderItem from "../components/OrderItem";
 export default () => {
   return (
     <>
-      {/* <!-- Breadcrumb --> */}
-      <div className="container mx-auto mt-28 mb-6  px-6 text-sm text-gray-500">
-        Account / My Account / Product / View Cart /{" "}
-        <span className="text-black">Checkout</span>
-      </div>
-
       <div className="container mx-auto px-6 mt-10 grid grid-cols-1 lg:grid-cols-3 gap-12">
         {/* <!-- Billing Details --> */}
         <div className="lg:col-span-2">
