@@ -13,6 +13,7 @@ import LoadingSpinner from './components/LoadingSpinner';
 const Home = lazy(() => import('./pages/Home'));
 const Reg = lazy(() => import('./pages/Reg'));
 const Login = lazy(() => import('./pages/Login'));
+const About = lazy(() => import('./pages/About'));
 // const UserRegister = lazy(() => import('./pages/Reg'))
 // const UserRegister = lazy(() => import('./pages/Register'))
 // const FarmerRegistration = lazy(() => import('./pages/FarmerRegister'));
@@ -34,6 +35,7 @@ const Main = () => (
         <Route path="/" element={<Home />} />
         {/* <Route path="/reg" element={<Reg />} /> */}
         <Route path="/login" element={<Login />} />
+        <Route path="/about" element={<About />} />
         <Route path="/register" element={<Reg />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/products" element={<Products />} />

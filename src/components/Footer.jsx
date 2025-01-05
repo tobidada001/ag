@@ -3,7 +3,7 @@ import FooterSocials from "./FooterSocials";
 export default () => {
  
   return (
-    <footer className="bg-green-800 mt-10 text-white py-12">
+    <footer className="bg-green-800  text-white py-12 mt-10">
       <div className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-20">
         {/* Top Section */}
         <div className="grid gap-8 lg:grid-cols-4 sm:grid-cols-2">
