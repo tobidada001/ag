@@ -17,7 +17,8 @@ export default () => {
         </div>
 
         <div class="bg-gray-100 rounded-md p-4 md:sticky top-0">
-          <div class="flex border border-yellow-600 overflow-hidden rounded-md">
+
+          <div class="flex flex-col  md:flex-row md:border md:border-yellow-600 overflow-hidden rounded-md">
             <input
               type="email"
               placeholder="Promo code"
@@ -25,7 +26,7 @@ export default () => {
             />
             <button
               type="button"
-              class="flex items-center justify-center font-semibold tracking-wide bg-yellow-500 hover:bg-yellow-400 px-4 text-sm text-white"
+              class="font-semibold py-2 tracking-wide bg-yellow-500 hover:bg-yellow-400 px-4 text-sm text-white"
             >
               Apply
             </button>
