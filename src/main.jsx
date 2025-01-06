@@ -57,6 +57,11 @@ const Main = () => (
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
+  <div className='flex flex-col justify-between min-h-screen'>
+    
     <Main />
+
+    
+    </div>
   </StrictMode>,
 );
