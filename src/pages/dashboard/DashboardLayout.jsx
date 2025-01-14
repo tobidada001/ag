@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../../assets/icons/logo.png'
+import logo from '../../assets/icons/agripathwaylogo.png'
 import { Menu, X, Home, ShoppingCart, Package, User, ClipboardList, Search, Bell, User2 } from 'lucide-react';
 
 
@@ -24,7 +24,7 @@ const DashboardLayout = ({ children }) => {
         }`}
       >
         <div className="flex justify-between items-center mb-6">
-          <span className="text-xl font-bold w-full text-center"><img src={logo} className="h-10  md:w-11/12 md:mx-auto"/></span>
+          <span className="text-xl flex items-center font-bold w-full text-center"><img src={logo} className="h-10  md:w-2/12"/>Agripathway</span>
           <button onClick={closeSidebar} className="md:hidden">
             <X size={24} />
           </button>
