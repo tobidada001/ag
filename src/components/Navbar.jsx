@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, Search, ShoppingCart, X } from 'lucide-react';
+import logo from '../assets/icons/logo.png'
 
 const Navbar = () => {
   const [showSearch, setShowSearch] = useState(false);
@@ -33,7 +34,7 @@ const Navbar = () => {
     <header className="bg-green-700 shadow-md sticky top-0 z-50">
       <nav className="container mx-auto flex items-center justify-between py-4 px-4 lg:px-6">
         {/* Logo */}
-        <div className="text-white text-2xl font-bold flex-shrink-0">Agripathway</div>
+        <div className="text-white text-2xl font-bold flex-shrink-0"><img src={logo} className="h-10 w-24  sm:w-30 md:w-36"/></div>
 
         {/* Desktop Links */}
         <div className="hidden lg:flex space-x-6 text-white">
