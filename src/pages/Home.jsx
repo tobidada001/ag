@@ -45,7 +45,7 @@ const Home = () => {
                   Create an account
                 </Link>
                 <Link
-                  to={'/about'}
+                  to={'/dashboard'}
                   className="bg-transparent border border-yellow-400 hover:border-yellow-500 hover:bg-yellow-500 text-white px-6 py-3 rounded-lg text-lg font-medium"
                 >
                   Learn More
