@@ -19,8 +19,8 @@ const Dashboard = () => {
   ];
 
   return (
-    <div className="p-6 bg-gray-100 min-h-screen">
-      <h1 className="text-3xl font-bold text-gray-800 mb-6">Farmer Dashboard</h1>
+    <div className="p-3 md:p-6 bg-gray-100 min-h-screen">
+      <h1 className="text-2xl md:text-3xl font-bold text-gray-800 mb-6">Good morning, Johnson</h1>
       
       {/* Stats Section */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
