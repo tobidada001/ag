@@ -73,7 +73,7 @@ const OrdersList = () => {
                 <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{order.customerName}</td>
                 <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{order.product}</td>
                 <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{order.quantity}</td>
-                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${order.total.toFixed(2)}</td>
+                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">₦{order.total.toFixed(2)}</td>
                 <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                   <span className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${getStatusColor(order.status)}`}>
                     {order.status}

@@ -6,16 +6,16 @@ const Dashboard = () => {
   const stats = [
     { title: 'Total Products', value: 45, icon: <Package size={24} /> },
     { title: 'Total Orders', value: 128, icon: <ShoppingCart size={24} /> },
-    { title: 'Total Sales', value: '$5,240', icon: <DollarSign size={24} /> },
+    { title: 'Total Sales', value: '₦5,240', icon: <DollarSign size={24} /> },
     { title: 'Pending Deliveries', value: 8, icon: <Truck size={24} /> },
   ];
 
   const recentOrders = [
-    { id: 1, product: 'Organic Tomatoes', quantity: 50, total: '$250', status: 'Delivered' },
-    { id: 2, product: 'Fresh Corn', quantity: 100, total: '$300', status: 'Processing' },
-    { id: 3, product: 'Green Beans', quantity: 30, total: '$90', status: 'Shipped' },
-    { id: 4, product: 'Red Potatoes', quantity: 80, total: '$160', status: 'Pending' },
-    { id: 5, product: 'Carrots', quantity: 60, total: '$120', status: 'Delivered' },
+    { id: 1, product: 'Organic Tomatoes', quantity: 50, total: '250', status: 'Delivered' },
+    { id: 2, product: 'Fresh Corn', quantity: 100, total: '300', status: 'Processing' },
+    { id: 3, product: 'Green Beans', quantity: 30, total: '90', status: 'Shipped' },
+    { id: 4, product: 'Red Potatoes', quantity: 80, total: '160', status: 'Pending' },
+    { id: 5, product: 'Carrots', quantity: 60, total: '120', status: 'Delivered' },
   ];
 
   return (
@@ -49,7 +49,7 @@ const Dashboard = () => {
                   <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{order.id}</td>
                   <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{order.product}</td>
                   <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{order.quantity}</td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{order.total}</td>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">₦{order.total}</td>
                   <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                     <span className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${getStatusColor(order.status)}`}>
                       {order.status}

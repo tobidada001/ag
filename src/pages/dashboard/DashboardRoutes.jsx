@@ -12,6 +12,8 @@ import Reports from './Reports';
 import Sidebar from './Sidebar';
 import NotFound from '../NotFound';
 import Products from './Products';
+import FarmerWallet from './FarmerWallet';
+import FarmerWallet2 from './FarmerWallet2';
 
 function DashboardRoutes() {
   return (
@@ -19,6 +21,7 @@ function DashboardRoutes() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Dashboard />} />
+          <Route path='wallet' element={<FarmerWallet2 />} />
           <Route path='products' element={<Products />} />
           <Route path='sort' element={<Sidebar />} />
           <Route path="orders" element={<OrdersList />} />

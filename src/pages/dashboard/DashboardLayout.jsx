@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import logo from '../../assets/icons/agripathwaylogo.png'
 import { Menu, X, Home, ShoppingCart, Package, User, ClipboardList, Search, Bell, User2 } from 'lucide-react';
 
@@ -15,11 +15,14 @@ const DashboardLayout = ({ children }) => {
     setIsSidebarOpen(false);
   };
 
+ 
+
+
   return (
     <div className="flex h-screen bg-gray-100">
       {/* Sidebar */}
       <aside
-        className={`bg-green-600 text-white w-64 min-h-screen p-4 fixed md:static md:translate-x-0 transition-all duration-300 ease-in-out z-50 ${
+        className={`bg-green-50 text-[#333333] w-64 min-h-screen p-4 fixed md:static md:translate-x-0 transition-all duration-300 ease-in-out z-50 ${
           isSidebarOpen ? 'translate-x-0' : '-translate-x-full'
         }`}
       >
@@ -30,12 +33,16 @@ const DashboardLayout = ({ children }) => {
           </button>
         </div>
         <nav className="flex flex-col space-y-2">
-          <NavLink to="/dashboard" icon={<Home size={20} />}>Dashboard</NavLink>
-          <NavLink to="/dashboard/products" icon={<Package size={20} />}>Products</NavLink>
-          <NavLink to="/dashboard/orders" icon={<ClipboardList size={20} />}>Orders</NavLink>
-          {/* <NavLink to="/dashboard/farmers" icon={<User size={20} />}>Farmers</NavLink> */}
-          <NavLink to="/dashboard/profile" icon={<User2 size={20} />}>Profile</NavLink>
+          <CustomNavLink to="/dashboard" end={true} icon={<Home size={20} />} >Dashboard</CustomNavLink>
+          <CustomNavLink to="/dashboard/wallet" icon={<User size={20} />}>Wallet</CustomNavLink>
+          <CustomNavLink to="/dashboard/products" icon={<Package size={20} />}>Products</CustomNavLink>
+          <CustomNavLink to="/dashboard/orders"  icon={<ClipboardList size={20} />}>Orders</CustomNavLink>
+          <CustomNavLink to="/dashboard/profile" icon={<User2 size={20} />}>Profile</CustomNavLink>
         </nav>
+
+          <div className='absolute left-0 right-0 bottom-4 text-center'>
+        <button className='py-1 px-3 mx-auto bg-green-200 text-sm rounded-xl font-semibold text-green-800'>Verified</button>
+        </div>
       </aside>
 
       {/* Main Content */}
@@ -85,7 +92,7 @@ const DashboardLayout = ({ children }) => {
 
         {/* Page Content */}
         <main className="flex-1 overflow-x-hidden overflow-y-auto bg-gray-100">
-          <div className="container mx-auto  md:px-6 py-8">
+          <div className="container mx-auto  md:px-6 ">
             {children}
           </div>
         </main>
@@ -102,15 +109,20 @@ const DashboardLayout = ({ children }) => {
   );
 };
 
-const NavLink = ({ to, icon, children }) => (
-  <Link
-    to={to}
-    className="flex items-center space-x-2 hover:bg-green-500 p-2 rounded-md transition"
+
+
+const CustomNavLink = ({ to, icon, children, end = false }) => (
+  <NavLink
+    to={to} end={end}
+    className={({ isActive }) =>
+      `flex items-center space-x-2 hover:bg-green-100 p-2 rounded-md transition ${
+        isActive ? 'text-gray-50 bg-green-500 hover:text-gray-800 border-l-2 border-green-900' : 'text-gray-900'
+      }`
+    }
   >
     {icon}
     <span>{children}</span>
-  </Link>
+  </NavLink>
 );
-
 export default DashboardLayout;
 
