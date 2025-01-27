@@ -6,6 +6,9 @@ import Testimonials from '../components/Testimonials';
 import { Link } from 'react-router-dom';
 import bgimage from '../assets/images/countryside-woman-holding-plant-leaves.jpg';
 import LoadingSpinner from '../components/LoadingSpinner';
+import FlashSales from '../components/FlashSales';
+import BestSellingProducts from '../components/BestSellingProducts';
+import SponsoredProducts from '../components/SponsoredProducts';
 
 const Home = () => {
   const [imageLoaded, setImageLoaded] = useState(false);
@@ -56,8 +59,20 @@ const Home = () => {
         </div>
       )}
 
-      <HomePageCategorySection />
+      
+      <div className='mx-5'>
+        <FlashSales />
+
+        <SponsoredProducts />
+
+
+        <HomePageCategorySection />
+
+        <BestSellingProducts />
+      </div>
+      
       <FeaturedCrops />
+
       <HowItWorks />
       <Testimonials />
 

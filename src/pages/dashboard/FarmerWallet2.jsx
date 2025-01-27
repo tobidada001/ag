@@ -144,14 +144,14 @@ const FarmerWallet2 = () => {
   return (
     <div className="min-h-screen bg-gray-100 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
-        <h1 className="text-2xl font-extrabold text-gray-900 mb-8">Farmer Wallet</h1>
+        <h1 className="text-2xl font-extrabold text-gray-900 mb-8">Johnson's Wallet</h1>
 
         <div className="bg-white shadow sm:rounded-lg mb-8">
           <div className="px-4 py-5 sm:p-6">
             <div className="flex flex-wrap justify-center gap-4">
             <button className="flex items-center justify-center bg-purple-500 hover:bg-purple-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
                 <PlusCircle className="h-5 w-5 mr-2" />
-                Add Funds
+                Add Bank
               </button>
 
               <button className="flex items-center justify-center bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">

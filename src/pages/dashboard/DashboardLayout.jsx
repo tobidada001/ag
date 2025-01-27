@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import logo from '../../assets/icons/agripathwaylogo.png'
-import { Menu, X, Home, ShoppingCart, Package, User, ClipboardList, Search, Bell, User2 } from 'lucide-react';
+import { Menu, X, Home, ShoppingCart, Package, User, ClipboardList, Search, Bell, User2, LogOut } from 'lucide-react';
 
 
 const DashboardLayout = ({ children }) => {
@@ -38,6 +38,7 @@ const DashboardLayout = ({ children }) => {
           <CustomNavLink to="/dashboard/products" icon={<Package size={20} />}>Products</CustomNavLink>
           <CustomNavLink to="/dashboard/orders"  icon={<ClipboardList size={20} />}>Orders</CustomNavLink>
           <CustomNavLink to="/dashboard/profile" icon={<User2 size={20} />}>Profile</CustomNavLink>
+          <CustomNavLink to="/" icon={<LogOut className='text-red-600' size={20} />}>Logout</CustomNavLink>
         </nav>
 
           <div className='absolute left-0 right-0 bottom-4 text-center'>

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, X, Home, ShoppingCart, Package, User, ClipboardList } from 'lucide-react';
+import { Menu, X, Home, ShoppingCart, Package, User, ClipboardList, LogOut } from 'lucide-react';
 
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -80,8 +80,17 @@ const Sidebar = () => {
             onClick={closeSidebar}
           >
             <ShoppingCart size={20} className="mr-2" />
-            Profile
+            Profiles
           </Link>
+
+          {/* <Link
+            to="/dashboard/logout"
+            className="flex items-center hover:bg-green-500 p-2 rounded-md transition"
+            onClick={closeSidebar}
+          >
+            <LogOut size={20} className="mr-2" />
+            Logout
+          </Link> */}
         </nav>
       </div>
 

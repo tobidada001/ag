@@ -14,6 +14,8 @@ const Home = lazy(() => import('./pages/Home'));
 const Reg = lazy(() => import('./pages/Reg'));
 const Login = lazy(() => import('./pages/Login'));
 const About = lazy(() => import('./pages/About'));
+const AllCategories = lazy(() => import('./pages/AllCategories'));
+const CategoryProduct = lazy(() => import('./pages/CategoryProducts'));
 const DashboardRoutes = lazy(() => import('./pages/dashboard/DashboardRoutes'));
 const Contact = lazy(() => import('./pages/Contact'));
 const Products = lazy(() => import('./pages/Products'));
@@ -21,6 +23,8 @@ const ProductDetail = lazy(() => import('./pages/ProductDetail'));
 const Wishlist = lazy(() => import('./pages/Wishlist'));
 const Checkout = lazy(() => import('./pages/Checkout'));
 const Cart = lazy(() => import('./pages/Cart'));
+const OrderTracking = lazy(() => import('./pages/OrderTracking'));
+const LiveChat = lazy(() => import('./pages/LiveChat'));
 const NotFound = lazy(() => import('./pages/NotFound'));
 
 const Main = () => {
@@ -49,6 +53,10 @@ const Main = () => {
           <Route path="/order-completed" element={<OrderCompletedPage />} />
           <Route path="/verify-otp" element={<OTPVerification />} />
           <Route path="/dashboard/*" element={<DashboardRoutes />} />
+          <Route path="/categories" element={<AllCategories />} />
+          <Route path="/category/*" element={<CategoryProduct />} />
+          <Route path="/order-tracking" element={<OrderTracking />} />
+          <Route path="/chat" element={<LiveChat />} />
 
           <Route path="*" element={<NotFound />} />
         </Routes>
