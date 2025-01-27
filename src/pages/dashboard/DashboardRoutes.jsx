@@ -14,6 +14,7 @@ import NotFound from '../NotFound';
 import Products from './Products';
 import FarmerWallet from './FarmerWallet';
 import FarmerWallet2 from './FarmerWallet2';
+import FarmerBankDetails from './FarmerBankDetails';
 
 function DashboardRoutes() {
   return (
@@ -24,6 +25,7 @@ function DashboardRoutes() {
           <Route path='wallet' element={<FarmerWallet2 />} />
           <Route path='products' element={<Products />} />
           <Route path='sort' element={<Sidebar />} />
+          <Route path='link-bank-account' element={<FarmerBankDetails />} />
           <Route path="orders" element={<OrdersList />} />
           <Route path="orders/:id" element={<OrderDetails />} />
           <Route path="inventory" element={<Inventory />} />

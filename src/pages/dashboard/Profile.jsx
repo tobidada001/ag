@@ -1,7 +1,5 @@
 import React, { useState } from "react"
-import { User, Shield, Settings, Upload, Save, X, ChevronDown } from "lucide-react"
-import userimg from '../../assets/icons/user.png'
-
+import { User, Shield, Settings, Upload, Save, X, ChevronDown, AlertCircle } from "lucide-react"
 
 const Profile = () => {
   const [activeTab, setActiveTab] = useState("profile")
@@ -18,6 +16,12 @@ const Profile = () => {
     notifications: true,
   })
   const [isDropdownOpen, setIsDropdownOpen] = useState(false)
+  const [verificationDocs, setVerificationDocs] = useState({
+    governmentId: null,
+    landOwnership: null,
+    farmingCertification: null,
+    additionalDoc: null,
+  })
 
   const handleInputChange = (e) => {
     const { name, value, type, checked } = e.target
@@ -38,6 +42,20 @@ const Profile = () => {
     }
   }
 
+  const handleDocUpload = (e, docType) => {
+    const file = e.target.files[0]
+    if (file) {
+      const reader = new FileReader()
+      reader.onloadend = () => {
+        setVerificationDocs((prev) => ({
+          ...prev,
+          [docType]: reader.result,
+        }))
+      }
+      reader.readAsDataURL(file)
+    }
+  }
+
   const handleSubmit = (e) => {
     e.preventDefault()
     // Handle form submission (e.g., API call to update user data)
@@ -50,7 +68,7 @@ const Profile = () => {
         <div className="shrink-0">
           <img
             className="h-16 w-16 object-cover rounded-full"
-            src={profileImage || userimg}
+            src={profileImage || "https://via.placeholder.com/150"}
             alt="Profile"
           />
         </div>
@@ -168,35 +186,119 @@ const Profile = () => {
           </div>
         </div>
       </div>
-      <div className="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center">
-        <Upload className="mx-auto h-12 w-12 text-gray-400" />
-        <div className="mt-4">
-          <label
-            htmlFor="file-upload"
-            className="cursor-pointer rounded-md font-medium text-green-600 hover:text-green-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-green-500"
-          >
-            <span>Upload verification document</span>
-            <input
-              id="file-upload"
-              name="file-upload"
-              type="file"
-              className="sr-only"
-              onChange={(e) => handleImageUpload(e, setVerificationDoc)}
-            />
-          </label>
+
+      {/* Government-issued ID */}
+      <div className="border-2 border-dashed border-gray-300 rounded-lg p-6">
+        <h3 className="text-lg font-medium text-gray-900 mb-4">Government-issued ID</h3>
+        <div className="flex items-center justify-center">
+          {verificationDocs.governmentId ? (
+            <div className="relative">
+              <img
+                src={verificationDocs.governmentId || "/placeholder.svg"}
+                alt="Government ID"
+                className="max-w-full h-auto max-h-48 rounded"
+              />
+              <button
+                onClick={() => setVerificationDocs((prev) => ({ ...prev, governmentId: null }))}
+                className="absolute top-0 right-0 bg-red-500 text-white rounded-full p-1"
+                aria-label="Remove government ID"
+              >
+                <AlertCircle className="h-4 w-4" />
+              </button>
+            </div>
+          ) : (
+            <label
+              htmlFor="gov-id-upload"
+              className="cursor-pointer bg-white rounded-md font-medium text-green-600 hover:text-green-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-green-500"
+            >
+              <span>Upload Government ID</span>
+              <input
+                id="gov-id-upload"
+                name="gov-id-upload"
+                type="file"
+                className="sr-only"
+                onChange={(e) => handleDocUpload(e, "governmentId")}
+              />
+            </label>
+          )}
         </div>
-        <p className="mt-1 text-sm text-gray-500">PNG, JPG, GIF up to 10MB</p>
       </div>
-      {verificationDoc && (
-        <div className="mt-4">
-          <p className="font-medium text-gray-900">Uploaded Document:</p>
-          <img
-            src={verificationDoc || "/placeholder.svg"}
-            alt="Verification Document"
-            className="mt-2 max-w-full h-auto"
-          />
+
+      {/* Proof of Land Ownership or Lease Agreement */}
+      <div className="border-2 border-dashed border-gray-300 rounded-lg p-6">
+        <h3 className="text-lg font-medium text-gray-900 mb-4">Proof of Land Ownership or Lease Agreement</h3>
+        <div className="flex items-center justify-center">
+          {verificationDocs.landOwnership ? (
+            <div className="relative">
+              <img
+                src={verificationDocs.landOwnership || "/placeholder.svg"}
+                alt="Land Ownership Document"
+                className="max-w-full h-auto max-h-48 rounded"
+              />
+              <button
+                onClick={() => setVerificationDocs((prev) => ({ ...prev, landOwnership: null }))}
+                className="absolute top-0 right-0 bg-red-500 text-white rounded-full p-1"
+                aria-label="Remove land ownership document"
+              >
+                <AlertCircle className="h-4 w-4" />
+              </button>
+            </div>
+          ) : (
+            <label
+              htmlFor="land-doc-upload"
+              className="cursor-pointer bg-white rounded-md font-medium text-green-600 hover:text-green-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-green-500"
+            >
+              <span>Upload Land Document</span>
+              <input
+                id="land-doc-upload"
+                name="land-doc-upload"
+                type="file"
+                className="sr-only"
+                onChange={(e) => handleDocUpload(e, "landOwnership")}
+              />
+            </label>
+          )}
         </div>
-      )}
+      </div>
+
+      {/* Farming Certifications */}
+      <div className="border-2 border-dashed border-gray-300 rounded-lg p-6">
+        <h3 className="text-lg font-medium text-gray-900 mb-4">Farming Certifications (if applicable)</h3>
+        <div className="flex items-center justify-center">
+          {verificationDocs.farmingCertification ? (
+            <div className="relative">
+              <img
+                src={verificationDocs.farmingCertification || "/placeholder.svg"}
+                alt="Farming Certification"
+                className="max-w-full h-auto max-h-48 rounded"
+              />
+              <button
+                onClick={() => setVerificationDocs((prev) => ({ ...prev, farmingCertification: null }))}
+                className="absolute top-0 right-0 bg-red-500 text-white rounded-full p-1"
+                aria-label="Remove farming certification"
+              >
+                <AlertCircle className="h-4 w-4" />
+              </button>
+            </div>
+          ) : (
+            <label
+              htmlFor="cert-upload"
+              className="cursor-pointer bg-white rounded-md font-medium text-green-600 hover:text-green-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-green-500"
+            >
+              <span>Upload Certification</span>
+              <input
+                id="cert-upload"
+                name="cert-upload"
+                type="file"
+                className="sr-only"
+                onChange={(e) => handleDocUpload(e, "farmingCertification")}
+              />
+            </label>
+          )}
+        </div>
+      </div>
+
+  
       <div className="flex justify-end">
         <button
           type="button"
@@ -267,9 +369,9 @@ const Profile = () => {
   )
 
   return (
-    <div className="min-h-screen bg-gray-100 py-8 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-6xl mx-auto">
-        <h1 className="text-2xl font-bold text-gray-900  mb-4">Account Settings</h1>
+    <div className="min-h-screen bg-gray-100 py-12 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-3xl mx-auto">
+        <h1 className="text-3xl font-extrabold text-gray-900 text-center mb-8">Account Settings</h1>
         <div className="bg-white shadow overflow-hidden sm:rounded-lg">
           <div className="border-b border-gray-200">
             <nav className="hidden sm:-mb-px sm:flex" aria-label="Tabs">

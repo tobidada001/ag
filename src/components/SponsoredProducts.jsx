@@ -13,7 +13,7 @@ const SponsoredProducts = () => {
 
   return (
     <section className="my-8">
-      <h2 className="text-2xl font-bold mb-4">Sponsored Products</h2>
+      <h2 className="text-3xl text-center mt-16 mb-10 md:text-4xl font-bold text-gray-800">Sponsored Products</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
         {sponsoredItems.map((item) => (
           <div

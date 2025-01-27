@@ -10,6 +10,7 @@ import {
   PlusCircle,
   History,
 } from "lucide-react"
+import { Link } from "react-router-dom"
 
 const FarmerWallet2 = () => {
   const [activeTab, setActiveTab] = useState("overview")
@@ -149,10 +150,10 @@ const FarmerWallet2 = () => {
         <div className="bg-white shadow sm:rounded-lg mb-8">
           <div className="px-4 py-5 sm:p-6">
             <div className="flex flex-wrap justify-center gap-4">
-            <button className="flex items-center justify-center bg-purple-500 hover:bg-purple-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+            <Link to={'/dashboard/link-bank-account'} className="flex items-center justify-center bg-purple-500 hover:bg-purple-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
                 <PlusCircle className="h-5 w-5 mr-2" />
                 Add Bank
-              </button>
+              </Link>
 
               <button className="flex items-center justify-center bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
                 <CreditCard className="h-5 w-5 mr-2" />
