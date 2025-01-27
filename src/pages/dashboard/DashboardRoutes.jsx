@@ -25,7 +25,7 @@ function DashboardRoutes() {
           <Route path='wallet' element={<FarmerWallet2 />} />
           <Route path='products' element={<Products />} />
           <Route path='sort' element={<Sidebar />} />
-          <Route path='link-bank-account' element={<FarmerBankDetails />} />
+          <Route path='bank-accounts' element={<FarmerBankDetails />} />
           <Route path="orders" element={<OrdersList />} />
           <Route path="orders/:id" element={<OrderDetails />} />
           <Route path="inventory" element={<Inventory />} />
