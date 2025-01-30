@@ -21,7 +21,7 @@ export default ({category}) => {
 
         <Link to={'/products'} >
 
-        <button className="mt-4 text-yellow-500 hover:text-yellow-600 font-medium  ">
+        <button className="mt-4 text-yellow-400 hover:text-yellow-500 font-medium  ">
 
           View Products &rarr;
         </button>

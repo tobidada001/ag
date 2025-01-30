@@ -2,18 +2,27 @@ import React, { useState } from 'react';
 import { Plus, Search, Edit, Trash2, X } from 'lucide-react';
 import AddProductModal from './AddProductModal';
 
+import rice from "../../assets/images/rice.jpeg";
+import tomato from "../../assets/images/tomato.jpeg";
+import cocoyam from "../../assets/images/cocoyam.jpeg";
+import potato from "../../assets/images/potato.jpeg";
+import vegetables from "../../assets/images/pepper.jpeg";
+
+
 const Products = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [products, setProducts] = useState([
-    { id: 1, name: 'Organic Tomatoes', category: 'Vegetables', price: 2.99, stock: 100 },
-    { id: 2, name: 'Fresh Corn', category: 'Vegetables', price: 1.50, stock: 150 },
-    { id: 3, name: 'Apples', category: 'Fruits', price: 3.99, stock: 75 },
-    { id: 4, name: 'Whole Wheat Flour', category: 'Grains', price: 4.50, stock: 50 },
-    { id: 5, name: 'Free-range Eggs', category: 'Dairy & Eggs', price: 5.99, stock: 60 },
+    { id: 1, name: 'Organic Tomatoes', category: 'Vegetables', price: 300238.99, rating: 4.8, image: tomato },
+    { id: 2, name: 'Fresh Corn', category: 'Vegetables', price: 228731.49, rating: 4.7, image: vegetables },
+    { id: 3, name: 'Apples', category: 'Fruits',  price: 80000.99, rating: 4.9, image: rice },
+    { id: 4, name: 'Whole Wheat Flour', category: 'Grains', price: 12600.99, rating: 4.8, image: cocoyam },
+    { id: 5, name: 'Free-range Eggs', category: 'Dairy & Eggs', price: 6900.99, rating: 4.7, image: potato},
   ]);
 
-  const [newProduct, setNewProduct] = useState({ name: '', category: '', price: '', stock: '' });
+
+
+  const [newProduct, setNewProduct] = useState({ name: '', category: '', price: '', stock: '', image: '' });
 
   const filteredProducts = products.filter(product =>
     product.name.toLowerCase().includes(searchTerm.toLowerCase())

@@ -117,7 +117,7 @@ const CustomNavLink = ({ to, icon, children, end = false }) => (
     to={to} end={end}
     className={({ isActive }) =>
       `flex items-center space-x-2 hover:bg-green-100 p-2 rounded-md transition ${
-        isActive ? 'text-gray-50 bg-green-500 hover:text-gray-800 border-l-2 border-green-900' : 'text-gray-900'
+        isActive ? 'text-gray-50 bg-green-500 hover:text-gray-800 border-l-4 border-green-900' : 'text-gray-900'
       }`
     }
   >

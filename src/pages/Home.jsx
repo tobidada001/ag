@@ -60,7 +60,7 @@ const Home = () => {
       )}
 
       
-      <div className='mx-5'>
+      <div className='mx-2 sm:mx-5 md:mx-10 lg:mx-20'>
         <FlashSales />
 
         <SponsoredProducts />
@@ -69,9 +69,11 @@ const Home = () => {
         <HomePageCategorySection />
 
         <BestSellingProducts />
+
+        <FeaturedCrops />
+
       </div>
       
-      <FeaturedCrops />
 
       <HowItWorks />
       <Testimonials />

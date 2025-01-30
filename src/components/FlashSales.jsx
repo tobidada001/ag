@@ -48,7 +48,7 @@ const CountdownTimer = ({ endTime }) => {
   return (
     <div className="text-center my-6">
       {timerComponents.length ? (
-        <div className="bg-white text-red-600 rounded-lg py-3 px-6 inline-block shadow-lg">
+        <div className="bg-white text-orange-600 rounded-lg py-3 px-6 inline-block shadow-lg">
           <span className="text-xl font-semibold mr-2">Ends in:</span>
           {timerComponents}
         </div>
@@ -71,8 +71,8 @@ const FlashSales = () => {
   const endTime = new Date(new Date().getTime() + 24 * 60 * 60 * 1000)
 
   return (
-    <section className="my-12 bg-gradient-to-r from-red-500 to-orange-500 rounded-3xl overflow-hidden shadow-2xl">
-      <div className="bg-white bg-opacity-90 p-8">
+    <section className="my-12 bg-gradient-to-r from-green-400 to-[#15803d] rounded-3xl overflow-hidden shadow-2xl">
+      <div className="bg-white bg-opacity-5 p-8">
         <div className="flex items-center justify-center mb-6">
           <Zap className="h-12 w-12 text-yellow-400 mr-4" />
           <h2 className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-orange-600">
@@ -89,7 +89,7 @@ const FlashSales = () => {
             >
               <div className="relative">
                 <img src={item.image || "/placeholder.svg"} alt={item.name} className="w-full h-48 object-cover" />
-                <div className="absolute top-0 right-0 bg-red-600 text-white px-2 py-1 m-2 rounded-md text-sm font-semibold">
+                <div className="absolute top-0 right-0 bg-orange-600 text-white px-2 py-1 m-2 rounded-md text-sm font-semibold">
                   {Math.round(((item.price - item.discountPrice) / item.price) * 100)}% OFF
                 </div>
               </div>
@@ -98,7 +98,7 @@ const FlashSales = () => {
                 <div className="flex justify-between flex-wrap items-center">
                   <div className="flex flex-wrap">
                     <span className="text-gray-500 line-through">₦{item.price.toFixed(2)}</span>
-                    <span className="text-red-600 font-bold ml-2">₦{item.discountPrice.toFixed(2)}</span>
+                    <span className="text-orange-600 font-bold ml-2">₦{item.discountPrice.toFixed(2)}</span>
                   </div>
                   <button className="bg-green-500 text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-green-600 transition-colors duration-300">
                     Add to Cart

@@ -9,12 +9,13 @@ const SponsoredProducts = () => {
     { id: 1, name: "Premium Fertilizer", brand: "GreenGrow", image: rice },
     { id: 2, name: "Organic Pesticide", brand: "NatureSafe", image: potato },
     { id: 3, name: "Smart Irrigation System", brand: "AquaTech", image: pepper},
+    { id: 3, name: "Olasco Tractors", brand: "BioTechies", image: cocoyam},
   ]
 
   return (
     <section className="my-8">
       <h2 className="text-3xl text-center mt-16 mb-10 md:text-4xl font-bold text-gray-800">Sponsored Products</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
         {sponsoredItems.map((item) => (
           <div
             key={item.id}
