@@ -22,6 +22,12 @@ const Home = () => {
     };
   }, []);
 
+
+  const setAccountType = (e) => {
+    localStorage.setItem('usertype', e.target.value)
+    
+  }
+
   return (
     <>
       {!imageLoaded ? <LoadingSpinner />: (
@@ -40,18 +46,29 @@ const Home = () => {
               <p className="text-lg text-white/90">
                 Buy crops directly from Nigerian farmers at the best prices. Support local agriculture and enjoy farm-fresh quality.
               </p>
+
+              <select className='bg-green-500 text-white' onChange={setAccountType}>
+                <option value={'buyer'}>Buyer Account</option>
+                <option value={'farmer'}>Farmer Account</option>
+              </select>
+              {/* <button className='bg-green-400 mr-2 py-2'>Switch to Buyer Account</button>
+              <button className='bg-green-400 mr-2 py-2'>Switch to Farmer Account</button> */}
+
               <div className="mt-6 flex flex-col md:flex-row justify-center lg:justify-start gap-4">
                 <Link
-                  to={'/register'}
+                  to={'/dashboard'} 
                   className="bg-yellow-400 text-green-800 hover:bg-yellow-500 px-6 py-3 rounded-lg text-lg font-medium"
                 >
-                  Create an account
+                  {/* Create an account */}
+                  Buyer's Dashboard
                 </Link>
+
                 <Link
-                  to={'/dashboard'}
+                  to={'/dashboard'} 
                   className="bg-transparent border border-yellow-400 hover:border-yellow-500 hover:bg-yellow-500 text-white px-6 py-3 rounded-lg text-lg font-medium"
                 >
-                  Learn More
+                  {/* Learn More */}
+                  Farmer's Dashboard
                 </Link>
               </div>
             </div>

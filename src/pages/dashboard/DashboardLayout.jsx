@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import logo from '../../assets/icons/agripathwaylogo.png'
-import { Menu, X, Home, ShoppingCart, Package, User, ClipboardList, Search, Bell, User2, LogOut } from 'lucide-react';
+import { Menu, X, Home, ShoppingCart, Package, User, ClipboardList, Search, Bell, User2, LogOut, GitGraph } from 'lucide-react';
 
 
 const DashboardLayout = ({ children }) => {
@@ -14,6 +14,9 @@ const DashboardLayout = ({ children }) => {
   const closeSidebar = () => {
     setIsSidebarOpen(false);
   };
+
+
+  const usertype = localStorage.getItem('usertype');
 
  
 
@@ -34,8 +37,9 @@ const DashboardLayout = ({ children }) => {
         </div>
         <nav className="flex flex-col space-y-2">
           <CustomNavLink to="/dashboard" end={true} icon={<Home size={20} />} >Dashboard</CustomNavLink>
+         {usertype==='farmer' && <CustomNavLink to="/dashboard/promotions" icon={<GitGraph size={20} />}>Promotions</CustomNavLink>}
           <CustomNavLink to="/dashboard/wallet" icon={<User size={20} />}>Wallet</CustomNavLink>
-          <CustomNavLink to="/dashboard/products" icon={<Package size={20} />}>Products</CustomNavLink>
+          {usertype==='farmer' &&  <CustomNavLink to="/dashboard/products" icon={<Package size={20} />}>Products</CustomNavLink> }
           <CustomNavLink to="/dashboard/orders"  icon={<ClipboardList size={20} />}>Orders</CustomNavLink>
           <CustomNavLink to="/dashboard/profile" icon={<User2 size={20} />}>Profile</CustomNavLink>
           <CustomNavLink to="/" icon={<LogOut className='text-red-600' size={20} />}>Logout</CustomNavLink>

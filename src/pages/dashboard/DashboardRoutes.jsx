@@ -15,22 +15,38 @@ import Products from './Products';
 import FarmerWallet from './FarmerWallet';
 import FarmerWallet2 from './FarmerWallet2';
 import FarmerBankDetails from './FarmerBankDetails';
+import PromotionStats from './PromotionStats';
+import AddPromotion from './AddPromotion';
+
+
 
 function DashboardRoutes() {
+  const usertype = localStorage.getItem('usertype');
+
   return (
     // <Router>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Dashboard />} />
           <Route path='wallet' element={<FarmerWallet2 />} />
+
+          {usertype === 'farmer' && (
+          <>
           <Route path='products' element={<Products />} />
-          <Route path='sort' element={<Sidebar />} />
+          <Route path='promotions' element={<PromotionStats />} />
+          <Route path='promotions/add' element={<AddPromotion />} />
+          <Route path="inventory" element={<Inventory />} />
           <Route path='bank-accounts' element={<FarmerBankDetails />} />
+          <Route path="reports" element={<Reports />} />
+          </>
+          )
+        }
+
+  
+          <Route path='sort' element={<Sidebar />} />
           <Route path="orders" element={<OrdersList />} />
           <Route path="orders/:id" element={<OrderDetails />} />
-          <Route path="inventory" element={<Inventory />} />
           <Route path="messages" element={<Messages />} />
-          <Route path="reports" element={<Reports />} />
           <Route path="profile" element={<Profile />} />
           <Route path="help" element={<Help />} />
           <Route path="*" element={<NotFound />} />
