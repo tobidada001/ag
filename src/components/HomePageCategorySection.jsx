@@ -77,7 +77,7 @@ const categoryData = [
   { id: 6, name: "Poultry", image: tomato },
 ]
 
-const HomePageCategorySection = ({ design = "cards" }) => {
+const HomePageCategorySection = ({ design = "scroll" }) => {
   const renderCategories = () => {
     switch (design) {
       case "grid":
@@ -101,7 +101,7 @@ const HomePageCategorySection = ({ design = "cards" }) => {
 
       case "scroll":
         return (
-          <div className="flex overflow-x-auto pb-4 space-x-4 scrollbar-hide">
+          <div className="flex overflow-x-auto pb-4 justify-center space-x-4 scrollbar-hide">
             {categoryData.map((category) => (
               <div key={category.id} className="flex-shrink-0 flex flex-col items-center w-24">
                 <div className="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center mb-2">
@@ -161,7 +161,7 @@ const HomePageCategorySection = ({ design = "cards" }) => {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <h2 className="text-2xl font-bold mb-6 text-gray-800">Categories</h2>
+      <h2 className="text-2xl text-center font-bold mb-6 text-gray-800">Categories</h2>
       {renderCategories()}
     </div>
   )

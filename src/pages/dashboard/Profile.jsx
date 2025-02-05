@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import { User, Shield, Settings, Upload, Save, X, ChevronDown, AlertCircle } from "lucide-react"
 
 const Profile = () => {
+  const usertype = localStorage.getItem('usertype')
   const [activeTab, setActiveTab] = useState("profile")
   const [profileImage, setProfileImage] = useState(null)
   const [verificationDoc, setVerificationDoc] = useState(null)
@@ -121,7 +122,8 @@ const Profile = () => {
             className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500"
           />
         </div>
-        <div>
+
+       {usertype === 'farmer' && <div>
           <label htmlFor="farmName" className="block text-sm font-medium text-gray-700">
             Farm Name
           </label>
@@ -133,7 +135,7 @@ const Profile = () => {
             onChange={handleInputChange}
             className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500"
           />
-        </div>
+        </div>}
         <div className="sm:col-span-2">
           <label htmlFor="address" className="block text-sm font-medium text-gray-700">
             Address
@@ -147,7 +149,9 @@ const Profile = () => {
             className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500"
           />
         </div>
-        <div className="sm:col-span-2">
+
+
+      {usertype === 'farmer' && <div className="sm:col-span-2">
           <label htmlFor="bio" className="block text-sm font-medium text-gray-700">
             Bio
           </label>
@@ -160,6 +164,8 @@ const Profile = () => {
             className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500"
           ></textarea>
         </div>
+      }
+
       </div>
       <div className="flex justify-end">
         <button
@@ -181,11 +187,22 @@ const Profile = () => {
           </div>
           <div className="ml-3">
             <p className="text-sm text-yellow-700">
-              Verify your account to unlock all features and increase trust with customers.
+              { usertype === 'farmer' ? 'Verify your account to unlock all features and increase trust with customers.' :
+              
+              'Verify your account to get access to products from other states in Nigeria'}
             </p>
           </div>
         </div>
       </div>
+
+
+    {usertype == 'buyer' && 
+    
+      <div className="w-full">
+          <input type="text" className="w-full rounded-md outline-none focus:outline-none border-1 focus:border-gray-800" placeholder="Bank Verification Number" />
+      </div>
+    }
+
 
       {/* Government-issued ID */}
       <div className="border-2 border-dashed border-gray-300 rounded-lg p-6">
@@ -225,6 +242,9 @@ const Profile = () => {
       </div>
 
       {/* Proof of Land Ownership or Lease Agreement */}
+
+    { usertype === 'farmer' &&
+
       <div className="border-2 border-dashed border-gray-300 rounded-lg p-6">
         <h3 className="text-lg font-medium text-gray-900 mb-4">Proof of Land Ownership or Lease Agreement</h3>
         <div className="flex items-center justify-center">
@@ -260,8 +280,15 @@ const Profile = () => {
           )}
         </div>
       </div>
+    }
+
+
+
+    
 
       {/* Farming Certifications */}
+
+      { usertype == 'farmer' && 
       <div className="border-2 border-dashed border-gray-300 rounded-lg p-6">
         <h3 className="text-lg font-medium text-gray-900 mb-4">Farming Certifications (if applicable)</h3>
         <div className="flex items-center justify-center">
@@ -297,6 +324,7 @@ const Profile = () => {
           )}
         </div>
       </div>
+      }
 
   
       <div className="flex justify-end">
