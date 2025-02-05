@@ -2,12 +2,15 @@ import React, { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, Search, ShoppingCart, X } from 'lucide-react';
 import logo from '../assets/icons/agripathwaylogo.png'
+import { useSidebar } from "../context/SidebarContext";
 
 const Navbar = () => {
   const [showSearch, setShowSearch] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
   const menuRef = useRef(null);
+
+  const { toggleSidebar } = useSidebar()
 
   useEffect(() => {
     if (location.pathname === "/") {
@@ -33,6 +36,14 @@ const Navbar = () => {
   return (
     <header className="bg-green-700 shadow-md sticky top-0 z-50">
       <nav className="container mx-auto flex items-center justify-between py-4 px-4 lg:px-6">
+
+
+ {/* Sidebar Toggle Button */}
+ <button className="text-white hover:text-yellow-400 transition duration-300 md:hidden" onClick={toggleSidebar}>
+          <Menu className="w-6 h-6" />
+        </button>
+
+
         {/* Logo */}
         <div className="text-white text-lg sm:text-2xl flex font-semibold justify-center items-center flex-shrink-0"><img src={logo} className="h-12 w-10 md:w-20"/><span>Agripathway</span></div>
 
@@ -131,4 +142,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-

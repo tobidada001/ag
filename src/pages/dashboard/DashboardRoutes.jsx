@@ -17,6 +17,7 @@ import FarmerWallet2 from './FarmerWallet2';
 import FarmerBankDetails from './FarmerBankDetails';
 import PromotionStats from './PromotionStats';
 import AddPromotion from './AddPromotion';
+import BuyerOrdersList from './BuyersOrderList';
 
 
 
@@ -44,7 +45,7 @@ function DashboardRoutes() {
 
   
           <Route path='sort' element={<Sidebar />} />
-          <Route path="orders" element={<OrdersList />} />
+          <Route path="orders" element={usertype === 'farmer' ? <OrdersList /> : <BuyerOrdersList /> } />
           <Route path="orders/:id" element={<OrderDetails />} />
           <Route path="messages" element={<Messages />} />
           <Route path="profile" element={<Profile />} />

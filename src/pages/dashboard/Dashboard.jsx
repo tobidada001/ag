@@ -1,14 +1,28 @@
 import React from 'react';
-import { Package, ShoppingCart, DollarSign, Truck } from 'lucide-react';
+import { Package, ShoppingCart, DollarSign, Truck, Wallet, Ship } from 'lucide-react';
 
 const Dashboard = () => {
+  const stats = []
+  const usertype = localStorage.getItem('usertype')
   // Sample data
-  const stats = [
-    { title: 'Total Products', value: 45, icon: <Package size={24} /> },
-    { title: 'Total Orders', value: 128, icon: <ShoppingCart size={24} /> },
-    { title: 'Total Sales', value: '₦5,240', icon: <DollarSign size={24} /> },
-    { title: 'Pending Deliveries', value: 8, icon: <Truck size={24} /> },
-  ];
+  if (usertype === 'farmer') {
+    stats.push(
+      { title: 'Total Products', value: 45, icon: <Package size={24} /> },
+      { title: 'Total Orders', value: 128, icon: <ShoppingCart size={24} /> },
+      { title: 'Total Sales', value: '₦5,240', icon: <DollarSign size={24} /> },
+      { title: 'Pending Deliveries', value: 8, icon: <Truck size={24} /> }
+    );
+  } else if (usertype === 'buyer' || usertype === undefined) {
+    stats.push(
+      { title: 'Wallet Balance', value: 4500000, icon: <Wallet size={24} /> },
+      { title: 'Total Orders', value: 128, icon: <Ship size={24} /> },
+      { title: 'Total Spent', value: '₦5,240', icon: <DollarSign size={24} /> },
+      { title: 'Active Orders', value: 8, icon: <Truck size={24} /> }
+    );
+  }
+
+
+
 
   const recentOrders = [
     { id: 1, product: 'Organic Tomatoes', quantity: 50, total: '250', status: 'Delivered' },

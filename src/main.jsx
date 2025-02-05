@@ -8,6 +8,7 @@ import Footer from './components/Footer';
 import OrderCompletedPage from './components/OrderCompleted';
 import OTPVerification from './pages/OTPVerification';
 import LoadingSpinner from './components/LoadingSpinner';
+import { SidebarProvider } from './context/SidebarContext';
 
 // Lazy-loaded pages
 const Home = lazy(() => import('./pages/Home'));
@@ -35,7 +36,9 @@ const Main = () => {
 
   return (
     <>
+      <SidebarProvider>
       {!isDashboardRoute && <Navbar />}
+
       
       {/* Wrap routes in Suspense to handle lazy loading */}
       <Suspense fallback={<LoadingSpinner />}>
@@ -61,8 +64,8 @@ const Main = () => {
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Suspense>
-      
       {!isDashboardRoute && <Footer />}
+      </SidebarProvider>
     </>
   );
 };

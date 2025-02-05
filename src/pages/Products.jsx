@@ -1,104 +1,65 @@
-import React from "react";
-import ProductCard from "../components/ProductCard";
-import ProductListSidebar from "../components/ProductListSidebar";
-import rice from "../assets/images/rice.jpeg";
-import tomato from "../assets/images/tomato.jpeg";
-import cocoyam from "../assets/images/cocoyam.jpeg";
-import potato from "../assets/images/potato.jpeg";
-import pepper from "../assets/images/pepper.jpeg";
-
+import ProductCard from "../components/ProductCard"
+import ProductListSidebar from "../components/ProductListSidebar"
+import tomato from "../assets/images/tomato.jpeg"
+import ProductListTopBanner from "../components/ProductListTopBanner"
+import Pagination from "../components/Pagination"
+import { useSidebar } from "../context/SidebarContext"
 
 const Products = () => {
+  const { sidebarOpen, closeSidebar } = useSidebar()
+
+  const updateFilters = (filters) => {
+    // Implement your filter logic here
+    console.log("Filters updated:", filters)
+  }
+
   const products = [
     {
       id: 1,
       name: "Fresh Tomatoes",
       category: "Vegetables",
-      price: 23834.20,
+      price: 23834.2,
       image: tomato,
     },
-    {
-      id: 2,
-      name: "Golden Bananas",
-      category: "Fruits",
-      price: 9000.23,
-      image: pepper,
-    },
-    {
-      id: 3,
-      name: "Sweet Potatoes",
-      category: "Tubers",
-      price: 17500.23,
-      image: potato,
-    },
-    {
-      id: 4,
-      name: "Basmati Rice",
-      category: "Grains",
-      price: 79999.00,
-      image: rice,
-    },
-  ];
+    // ... other products
+  ]
 
   return (
-    <>
-      <div className="flex flex-col lg:flex-row gap-6 max-w-7xl  mx-auto p-4">
-        {/* Sidebar */}
-        <ProductListSidebar />
+    <div className="min-h-screen bg-gray-100 mt-5 mx-2 sm:mx-5 md:mx-10 lg:mx-20">
+      <div className="flex flex-col md:flex-row">
+        <ProductListSidebar updateFilters={updateFilters} />
+        <main className="flex-1">
+          
+          <div className="p-4 md:p-8">
+            <div className=" bg-white shadow-md ">
+              <ProductListTopBanner listing_type={'flash_sales'}/>
+            </div>
 
-        {/* Product Grid */}
-        <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {products.map((product) => (
-            <ProductCard key={product.id} product={product} />
-          ))}
-        </div>
+            <div className="mt-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {products.map((product) => (
+                <>
+                <ProductCard key={product.id} product={product} />
+                <ProductCard key={product.id} product={product} />
+                <ProductCard key={product.id} product={product} />
+                <ProductCard key={product.id} product={product} />
+                <ProductCard key={product.id} product={product} />
+                <ProductCard key={product.id} product={product} />
+                <ProductCard key={product.id} product={product} />
+                <ProductCard key={product.id} product={product} />
+                <ProductCard key={product.id} product={product} />
+                </>
+              ))}
+            </div>
+            <Pagination />
+          </div>
+        </main>
       </div>
+      {sidebarOpen && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 z-40 md:hidden" onClick={closeSidebar}></div>
+      )}
+    </div>
+  )
+}
 
-      {/* Pagination */}
+export default Products
 
-      <div className="mt-16">
-        <ul className="flex space-x-5 justify-center font-[sans-serif]">
-          <li className="flex items-center justify-center shrink-0 bg-gray-100 w-9 h-9 rounded-md">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="w-3 fill-gray-400"
-              viewBox="0 0 55.753 55.753"
-            >
-              <path
-                d="M12.745 23.915c.283-.282.59-.52.913-.727L35.266 1.581a5.4 5.4 0 0 1 7.637 7.638L24.294 27.828l18.705 18.706a5.4 5.4 0 0 1-7.636 7.637L13.658 32.464a5.367 5.367 0 0 1-.913-.727 5.367 5.367 0 0 1-1.572-3.911 5.369 5.369 0 0 1 1.572-3.911z"
-                data-original="#000000"
-              />
-            </svg>
-          </li>
-          <li className="flex items-center justify-center shrink-0 bg-green-500  border hover:border-green-500 border-green-500 cursor-pointer text-base font-bold text-white px-[13px] h-9 rounded-md">
-            1
-          </li>
-          <li className="flex items-center justify-center shrink-0 border hover:border-green-500 cursor-pointer text-base font-bold text-gray-800 px-[13px] h-9 rounded-md">
-            2
-          </li>
-          <li className="flex items-center justify-center shrink-0 border hover:border-green-500 cursor-pointer text-base font-bold text-gray-800 px-[13px] h-9 rounded-md">
-            3
-          </li>
-          <li className="flex items-center justify-center shrink-0 border hover:border-green-500 cursor-pointer text-base font-bold text-gray-800 px-[13px] h-9 rounded-md">
-            4
-          </li>
-          <li className="flex items-center justify-center shrink-0 border hover:border-green-500 cursor-pointer w-9 h-9 rounded-md">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="w-3 fill-gray-400 rotate-180"
-              viewBox="0 0 55.753 55.753"
-            >
-              <path
-                d="M12.745 23.915c.283-.282.59-.52.913-.727L35.266 1.581a5.4 5.4 0 0 1 7.637 7.638L24.294 27.828l18.705 18.706a5.4 5.4 0 0 1-7.636 7.637L13.658 32.464a5.367 5.367 0 0 1-.913-.727 5.367 5.367 0 0 1-1.572-3.911 5.369 5.369 0 0 1 1.572-3.911z"
-                data-original="#000000"
-              />
-            </svg>
-          </li>
-        </ul>
-      </div>
-      {/* Pagination */}
-    </>
-  );
-};
-
-export default Products;
