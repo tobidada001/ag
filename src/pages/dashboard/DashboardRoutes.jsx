@@ -13,11 +13,12 @@ import Sidebar from './Sidebar';
 import NotFound from '../NotFound';
 import Products from './Products';
 import FarmerWallet from './FarmerWallet';
-import FarmerWallet2 from './FarmerWallet2';
 import FarmerBankDetails from './FarmerBankDetails';
 import PromotionStats from './PromotionStats';
 import AddPromotion from './AddPromotion';
 import BuyerOrdersList from './BuyersOrderList';
+import Transactions from './Transactions';
+import BankAccounts from './BankAccounts';
 
 
 
@@ -29,15 +30,17 @@ function DashboardRoutes() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Dashboard />} />
-          <Route path='wallet' element={<FarmerWallet2 />} />
+          <Route path='wallet' element={<FarmerWallet />} />
+          <Route path='transactions' element={<Transactions />} />
 
           {usertype === 'farmer' && (
           <>
           <Route path='products' element={<Products />} />
+          {/* <Route path='bank' element={<BankAccounts />} /> */}
           <Route path='promotions' element={<PromotionStats />} />
           <Route path='promotions/add' element={<AddPromotion />} />
           <Route path="inventory" element={<Inventory />} />
-          <Route path='bank-accounts' element={<FarmerBankDetails />} />
+          <Route path='link-bank-account' element={<BankAccounts />} />
           <Route path="reports" element={<Reports />} />
           </>
           )

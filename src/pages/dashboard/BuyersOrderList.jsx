@@ -1,16 +1,7 @@
 import { useState } from "react"
 import { Search, Eye, RefreshCw, HelpCircle, X } from "lucide-react"
 import { useNavigate } from "react-router-dom"
-
-// // Define the Order type
-// type Order = {
-//   id: number
-//   date: string
-//   items: { name: string; quantity: number; price: number }[]
-//   total: number
-//   status: "Pending" | "Processing" | "Delivered" | "Canceled"
-//   deliveryDetails: string
-// }
+import Pagination from "../../components/Pagination"
 
 const BuyerOrdersList = () => {
   const [searchTerm, setSearchTerm] = useState("")
@@ -155,12 +146,12 @@ const BuyerOrdersList = () => {
                   >
                     <Eye size={18} />
                   </button>
-                  <button onClick={() => handleReorder(order)} className="text-green-600 hover:text-green-900 mr-3">
-                    <RefreshCw size={18} />
+                  <button className="text-red-600 hover:text-red-900 mr-3">
+                    <X size={18} />
                   </button>
-                  <button onClick={() => handleOpenModal(order)} className="text-blue-600 hover:text-blue-900">
+                  {/* <button onClick={() => handleOpenModal(order)} className="text-blue-600 hover:text-blue-900">
                     <HelpCircle size={18} />
-                  </button>
+                  </button> */}
                 </td>
               </tr>
             ))}
@@ -220,6 +211,10 @@ const BuyerOrdersList = () => {
           </div>
         </div>
       )}
+
+
+
+      <Pagination />
     </div>
   )
 }

@@ -1,11 +1,25 @@
 import React, { useState } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 import logo from '../../assets/icons/agripathwaylogo.png'
-import { Menu, X, Home, ShoppingCart, Package, User, ClipboardList, Search, Bell, User2, LogOut, GitGraph } from 'lucide-react';
+import { Menu, X, Home, ShoppingCart, Package, User, ClipboardList, Search, Bell, User2, LogOut, GitGraph, DollarSign } from 'lucide-react';
+import LogoutModal from '../../components/LogoutModal';
 
 
 const DashboardLayout = ({ children }) => {
+  const navigate = useNavigate();
+  
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  const [isModalOpen, setIsModalOpen] = useState(false)
+
+  const openModal = () => setIsModalOpen(true)
+  const closeModal = () => setIsModalOpen(false)
+
+  const handleLogout = () => {
+    closeModal()
+    navigate('/');
+  }
+
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
@@ -14,6 +28,8 @@ const DashboardLayout = ({ children }) => {
   const closeSidebar = () => {
     setIsSidebarOpen(false);
   };
+
+
 
 
   const usertype = localStorage.getItem('usertype');
@@ -41,8 +57,13 @@ const DashboardLayout = ({ children }) => {
           <CustomNavLink to="/dashboard/wallet" icon={<User size={20} />}>Wallet</CustomNavLink>
           {usertype==='farmer' &&  <CustomNavLink to="/dashboard/products" icon={<Package size={20} />}>Products</CustomNavLink> }
           <CustomNavLink to="/dashboard/orders"  icon={<ClipboardList size={20} />}>Orders</CustomNavLink>
+          <CustomNavLink to="/dashboard/transactions"  icon={<DollarSign size={20} />}>Transactions</CustomNavLink>
           <CustomNavLink to="/dashboard/profile" icon={<User2 size={20} />}>Profile</CustomNavLink>
-          <CustomNavLink to="/" icon={<LogOut className='text-red-600' size={20} />}>Logout</CustomNavLink>
+        
+
+          <button onClick={openModal} className={`flex items-center space-x-2 hover:bg-green-100 p-2 rounded-md transition  hover:text-gray-800  border-green-900`}>
+              <LogOut className='text-red-600' size={20} /> <span>Logout</span>
+        </button>
         </nav>
 
           <div className='absolute left-0 right-0 bottom-4 text-center'>
@@ -103,6 +124,12 @@ const DashboardLayout = ({ children }) => {
         </main>
       </div>
 
+
+      {/* <LogoutModal isOpen={true} /> */}
+      <LogoutModal isOpen={isModalOpen} onClose={closeModal} onLogout={handleLogout} />
+
+
+      
       {/* Backdrop for Mobile */}
       {isSidebarOpen && (
         <div

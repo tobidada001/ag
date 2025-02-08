@@ -81,7 +81,7 @@ const Products = () => {
               <tr key={product.id}>
                 <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{product.name}</td>
                 <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{product.category}</td>
-                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${product.price.toFixed(2)}</td>
+                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">₦{product.price.toFixed(2)}</td>
                 <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{product.stock}</td>
                 <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
                   <button className="text-indigo-600 hover:text-indigo-900 mr-3">
