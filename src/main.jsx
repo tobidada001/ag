@@ -16,8 +16,8 @@ const Home = lazy(() => import('./pages/Home'));
 const Reg = lazy(() => import('./pages/Reg'));
 const Login = lazy(() => import('./pages/Login'));
 const About = lazy(() => import('./pages/About'));
-const AllCategories = lazy(() => import('./pages/AllCategories'));
-const CategoryProduct = lazy(() => import('./pages/CategoryProducts'));
+// const AllCategories = lazy(() => import('./pages/AllCategories'));
+// const CategoryProduct = lazy(() => import('./pages/CategoryProducts'));
 const DashboardRoutes = lazy(() => import('./pages/dashboard/DashboardRoutes'));
 const Contact = lazy(() => import('./pages/Contact'));
 const Products = lazy(() => import('./pages/Products'));
@@ -40,7 +40,6 @@ const Main = () => {
       <SidebarProvider>
       {!isDashboardRoute && <AnotherHeaderAgain />}
 
-      
 
       
       {/* Wrap routes in Suspense to handle lazy loading */}

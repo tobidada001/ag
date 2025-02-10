@@ -42,8 +42,9 @@ const Home = () => {
       <div className='flex md:mx-6 lg:mx-20 mt-5'>
       <Showcase />
 
+{/* style={{ backgroundImage: `url(${bgimage})`, backgroundSize: "cover" }} */}
      
-    <section className={`relative flex-1 bg-green-500 text-white py-20 `}  style={{ backgroundImage: `url(${bgimage})`, backgroundSize: "cover" }}>
+    <section className={`relative flex-1 bg-green-500 text-white py-20 `}  >
       <div className="container mx-auto px-4 flex flex-col md:flex-row items-center">
         <div className="md:w-1/2 mb-8 md:mb-0">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Fresh from Farm to Table</h1>
