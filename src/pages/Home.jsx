@@ -9,7 +9,7 @@ import LoadingSpinner from '../components/LoadingSpinner';
 import FlashSales from '../components/FlashSales';
 import BestSellingProducts from '../components/BestSellingProducts';
 import SponsoredProducts from '../components/SponsoredProducts';
-import Showcase from '../components/ShowCase';
+import Showcase from '../components/Showcase';
 
 const Home = () => {
   const [imageLoaded, setImageLoaded] = useState(false);
