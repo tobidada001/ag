@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react"
-import { Zap } from "lucide-react"
+import { ChevronRight, Zap } from "lucide-react"
 import rice from "../assets/images/rice.jpeg";
 import tomato from "../assets/images/tomato.jpeg";
 import cocoyam from "../assets/images/cocoyam.jpeg";
 import potato from "../assets/images/potato.jpeg";
 import pepper from "../assets/images/pepper.jpeg";
+import ProductCard from "./ProductCard";
 
 const CountdownTimer = ({ endTime }) => {
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft())
@@ -61,29 +62,43 @@ const CountdownTimer = ({ endTime }) => {
 
 const FlashSales = () => {
   const flashSaleItems = [
-    { id: 1, name: "Organic Apples", price: 200000.99, discountPrice: 190342.99, image: rice },
-    { id: 2, name: "Fresh Carrots", price: 18939834.99, discountPrice: 238984.99, image: cocoyam },
-    { id: 3, name: "Farm Eggs", price: 48394832233.99, discountPrice: 498932.99, image: pepper },
-    { id: 4, name: "Organic Milk", price: 4438398.99, discountPrice: 983283.99, image: tomato},
+    { id: 1, name: "Organic Apples", originalPrice: 200000.99, price: 190342.99, image: rice },
+    { id: 2, name: "Fresh Carrots", originalPrice: 18939834.99, price: 238984.99, image: cocoyam },
+    { id: 3, name: "Farm Eggs", originalPrice: 48394832233.99, price: 498932.99, image: pepper },
+    { id: 4, name: "Organic Milk", originalPrice: 4438398.99, price: 983283.99, image: tomato},
   ]
 
   // Set the end time for the flash sale (e.g., 24 hours from now)
   const endTime = new Date(new Date().getTime() + 24 * 60 * 60 * 1000)
 
+ 
   return (
     <section className="my-12 bg-gradient-to-r from-green-400 to-[#15803d] rounded-3xl overflow-hidden shadow-2xl">
       <div className="bg-white bg-opacity-5 p-8">
-        <div className="flex items-center justify-center mb-6">
-          <Zap className="h-12 w-12 text-yellow-400 mr-4" />
-          <h2 className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-orange-600">
-            Flash Sales
-          </h2>
-          <Zap className="h-12 w-12 text-yellow-400 ml-4" />
+        <div className="flex flex-col md:flex-row items-center justify-between mb-6">
+          <div className="flex items-center mb-4 md:mb-0">
+            <Zap className="h-12 w-12 text-yellow-400 mr-4" />
+            <h2 className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-orange-600">
+              Flash Sales
+            </h2>
+            <Zap className="h-12 w-12 text-yellow-400 ml-4" />
+          </div>
+          <div className="flex flex-col sm:flex-row items-center space-x-4">
+            <CountdownTimer endTime={endTime} />
+            <button className="bg-white text-green-600 px-6 py-2 rounded-full font-semibold shadow-md hover:bg-green-50 transition-all duration-300 flex items-center group">
+              See All
+              <ChevronRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
+            </button>
+          </div>
         </div>
-        <CountdownTimer endTime={endTime} />
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-4 lg:gap-6">
           {flashSaleItems.map((item) => (
-            <div
+            <>
+
+            <ProductCard product={item}/>
+
+
+            {/* <div
               key={item.id}
               className="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-xl"
             >
@@ -105,12 +120,15 @@ const FlashSales = () => {
                   </button>
                 </div>
               </div>
-            </div>
+            </div> */}
+
+            </>
           ))}
         </div>
       </div>
     </section>
   )
+
 }
 
 export default FlashSales

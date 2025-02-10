@@ -5,6 +5,9 @@ import cocoyam from "../assets/images/cocoyam.jpeg";
 import potato from "../assets/images/potato.jpeg";
 import guava from "../assets/images/guava.png";
 import vegetables from "../assets/images/vegetables.png";
+import { Link } from "react-router-dom";
+import { ChevronRight } from "lucide-react";
+import ProductCard from "./ProductCard";
 
 const BestSellingProducts = () => {
   const bestSellers = [
@@ -18,10 +21,21 @@ const BestSellingProducts = () => {
 
   return (
     <section className="my-8">
-      <h2 className="text-3xl text-center mt-16 mb-10 md:text-4xl font-bold text-gray-800">Best Selling Products</h2>
+      <div className="mt-10 mb-8 flex gap-y-5 flex-col sm:flex-row items-center justify-between ">
+        <h2 className="text-3xl text-center  md:text-4xl font-bold text-gray-800">Best Selling Products</h2>
+        
+        {/* <Link className="flex bg-green-200 px-3 py-1 rounded-full">See All <ChevronRight /></Link> */}
+         <button className="bg-white text-green-600 px-6 py-2 rounded-full font-semibold shadow-sm hover:bg-green-50 transition-all duration-300 flex items-center group">
+            See All <ChevronRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
+        </button>
+     
+      </div>
+
+
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {bestSellers.map((item) => (
-          <div
+          <>
+          {/* <div
             key={item.id}
             className="bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:scale-105"
           >
@@ -39,7 +53,10 @@ const BestSellingProducts = () => {
                 Add to Cart
               </button>
             </div>
-          </div>
+          </div> */}
+
+            <ProductCard key={item.id} product={item} isBestSelling={true} />
+          </>
         ))}
       </div>
     </section>

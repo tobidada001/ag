@@ -29,7 +29,7 @@ const FeaturedCrops = () => {
         {/* Crops Grid */}
         <div className="mt-10 grid gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
           {featuredCrops.map((crop, index) => (
-            <ProductCard product={crop} /> 
+            <ProductCard key={index} product={crop} /> 
           
           ))}
         </div>

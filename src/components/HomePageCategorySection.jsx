@@ -50,7 +50,7 @@ const HomePageCategorySection = () => {
         </div>
 
         
-        <div className="mt-10 flex overflow-x-auto whitespace-nowrap snap-x snap-mandatory">
+        <div className="mt-10 flex gap-2 overflow-x-auto whitespace-nowrap snap-x snap-mandatory">
           {categories.map((category, index) => (
           <Categories key={index} category={category}/>
           ))}

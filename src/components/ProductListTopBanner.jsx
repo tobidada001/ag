@@ -27,7 +27,7 @@ export default function ProductListTopBanner({ listing_type }) {
         return (
           <div className="bg-gradient-to-r from-yellow-400 to-orange-500 rounded-lg shadow-sm p-3 mb-1">
             <h2 className="text-2xl font-bold text-white mb-2">Flash Sales!</h2>
-            <div className="flex justify-between items-center">
+            <div className="flex md:justify-between items-start md:items-center md:flex-row flex-col">
               <div>
                 <p className="text-white mb-2">Don't miss out on these amazing deals!</p>
                 <p className="text-xl font-semibold text-white">Ends in: {formatTime(timeLeft)}</p>

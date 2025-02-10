@@ -9,6 +9,7 @@ import OrderCompletedPage from './components/OrderCompleted';
 import OTPVerification from './pages/OTPVerification';
 import LoadingSpinner from './components/LoadingSpinner';
 import { SidebarProvider } from './context/SidebarContext';
+import AnotherHeaderAgain from './components/AnotherHeaderAgain';
 
 // Lazy-loaded pages
 const Home = lazy(() => import('./pages/Home'));
@@ -37,7 +38,9 @@ const Main = () => {
   return (
     <>
       <SidebarProvider>
-      {!isDashboardRoute && <Navbar />}
+      {!isDashboardRoute && <AnotherHeaderAgain />}
+
+      
 
       
       {/* Wrap routes in Suspense to handle lazy loading */}
@@ -56,8 +59,8 @@ const Main = () => {
           <Route path="/order-completed" element={<OrderCompletedPage />} />
           <Route path="/verify-otp" element={<OTPVerification />} />
           <Route path="/dashboard/*" element={<DashboardRoutes />} />
-          <Route path="/categories" element={<AllCategories />} />
-          <Route path="/category/*" element={<CategoryProduct />} />
+          {/* <Route path="/categories" element={<AllCategories />} />
+          <Route path="/category/*" element={<CategoryProduct />} /> */}
           <Route path="/order-tracking" element={<OrderTracking />} />
           <Route path="/chat" element={<LiveChat />} />
 
