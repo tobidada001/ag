@@ -86,8 +86,7 @@ const FlashSales = () => {
           <div className="flex flex-col sm:flex-row items-center space-x-4">
             <CountdownTimer endTime={endTime} />
             <button className="bg-white text-green-600 px-6 py-2 rounded-full font-semibold shadow-md hover:bg-green-50 transition-all duration-300 flex items-center group">
-              See All
-              <ChevronRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
+              See All <ChevronRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
             </button>
           </div>
         </div>
