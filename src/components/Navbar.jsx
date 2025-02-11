@@ -169,24 +169,7 @@ const Navbar = () => {
 
               <hr/>
 
-              {/* </ul>
-
-
-            <ul className="space-y-4"> */}
-
-              {/* <li>
-                <Link to={'/'} className="block py-2 text-gray-900 hover:text-gray-600">
-                  Login
-                </Link>
-              </li> */}
-
-
-              {/* <li>
-                <Link to={'/'} className="block py-2 text-gray-900 hover:text-gray-600">
-                  Home
-                </Link>
-              </li> */}
-
+           
               <li>
                 <button
                   onClick={() => setIsCategoryOpen(!isCategoryOpen)}

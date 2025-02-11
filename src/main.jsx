@@ -56,8 +56,6 @@ const Main = () => {
           <Route path="/order-completed" element={<OrderCompletedPage />} />
           <Route path="/verify-otp" element={<OTPVerification />} />
           <Route path="/dashboard/*" element={<DashboardRoutes />} />
-          {/* <Route path="/categories" element={<AllCategories />} />
-          <Route path="/category/*" element={<CategoryProduct />} /> */}
           <Route path="/order-tracking" element={<OrderTracking />} />
           <Route path="/chat" element={<LiveChat />} />
 
