@@ -8,10 +8,10 @@ import { ChevronRight } from "lucide-react";
 import ProductCard from "./ProductCard";
 const SponsoredProducts = () => {
   const sponsoredItems = [
-    { id: 1, name: "Premium Fertilizer", brand: "GreenGrow", image: rice },
-    { id: 2, name: "Organic Pesticide", brand: "NatureSafe", image: potato },
-    { id: 3, name: "Smart Irrigation System", brand: "AquaTech", image: pepper},
-    { id: 3, name: "Olasco Tractors", brand: "BioTechies", image: cocoyam},
+    { id: 1, name: "Premium Fertilizer", brand: "GreenGrow", image: rice, price: 20000 },
+    { id: 2, name: "Organic Pesticide", brand: "NatureSafe", image: potato , price: 18500 },
+    { id: 3, name: "Smart Irrigation System", brand: "AquaTech", image: pepper, price: 185400 },
+    { id: 3, name: "Olasco Tractors", brand: "BioTechies", image: cocoyam, price: 6000000 },
   ]
 
   return (
