@@ -93,7 +93,7 @@ const OrderTracking = () => {
                 type="text"
                 value={trackingId}
                 onChange={(e) => setTrackingId(e.target.value)}
-                placeholder="Enter your tracking ID"
+                placeholder="Enter your tracking ID. E.g. ORD-12345"
                 className="flex-grow px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                 required
               />

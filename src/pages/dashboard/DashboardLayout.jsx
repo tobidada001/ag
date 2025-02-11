@@ -81,12 +81,10 @@ const DashboardLayout = ({ children }) => {
                 <button onClick={toggleSidebar} className="md:hidden p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-green-500">
                   <Menu size={24} />
                 </button>
-                {/* <div className="hidden md:block">
-                  <span className="text-xl font-bold text-green-600">Agripathway</span>
-                </div> */}
+               
               </div>
 
-              {/* Search Bar */}
+             
               <div className="hidden sm:block flex-grow max-w-md mx-4">
                 <div className="relative">
                   <input
@@ -98,7 +96,7 @@ const DashboardLayout = ({ children }) => {
                 </div>
               </div>
 
-              {/* User Profile and Notifications */}
+              
               <div className="flex items-center">
                 <button className="p-2 rounded-full text-gray-400 hover:bg-gray-100">
                   <Bell size={20} />

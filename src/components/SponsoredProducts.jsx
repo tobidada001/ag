@@ -4,6 +4,8 @@ import tomato from "../assets/images/tomato.jpeg";
 import cocoyam from "../assets/images/cocoyam.jpeg";
 import potato from "../assets/images/potato.jpeg";
 import pepper from "../assets/images/pepper.jpeg";
+import { ChevronRight } from "lucide-react";
+import ProductCard from "./ProductCard";
 const SponsoredProducts = () => {
   const sponsoredItems = [
     { id: 1, name: "Premium Fertilizer", brand: "GreenGrow", image: rice },
@@ -13,23 +15,21 @@ const SponsoredProducts = () => {
   ]
 
   return (
-    <section className="my-8">
-      <h2 className="text-3xl text-center mt-16 mb-10 md:text-4xl font-bold text-gray-800">Sponsored Products</h2>
+    <section className="my-8 mt-20">
+      <div className="mt-10 mb-8 flex gap-y-5 flex-col sm:flex-row items-center justify-between ">
+        <h2 className="text-3xl text-center  md:text-4xl font-bold text-gray-800">Sponsored Products</h2>
+        
+         <button className="bg-white text-green-600 px-6 py-2 rounded-full font-semibold shadow-sm hover:bg-green-50 transition-all duration-300 flex items-center group">
+            See All <ChevronRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
+        </button>
+     
+      </div>
+
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
         {sponsoredItems.map((item) => (
-          <div
-            key={item.id}
-            className="bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:scale-105"
-          >
-            <img src={item.image || "/placeholder.svg"} alt={item.name} className="w-full h-48 object-cover" />
-            <div className="p-4">
-              <h3 className="font-semibold text-lg mb-2">{item.name}</h3>
-              <p className="text-gray-600 mb-2">by {item.brand}</p>
-              <button className="bg-blue-500 text-white px-4 py-2 rounded-full text-sm hover:bg-blue-600 transition-colors duration-300">
-                Learn More
-              </button>
-            </div>
-          </div>
+         
+          <ProductCard product={item} isSponsored={true} />
+         
         ))}
       </div>
     </section>

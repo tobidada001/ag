@@ -2,9 +2,6 @@ import React, { useState, useEffect } from "react"
 import { ChevronRight, Zap } from "lucide-react"
 import rice from "../assets/images/rice.jpeg";
 import tomato from "../assets/images/tomato.jpeg";
-import cocoyam from "../assets/images/cocoyam.jpeg";
-import potato from "../assets/images/potato.jpeg";
-import pepper from "../assets/images/pepper.jpeg";
 import ProductCard from "./ProductCard";
 
 const CountdownTimer = ({ endTime }) => {
@@ -63,8 +60,8 @@ const CountdownTimer = ({ endTime }) => {
 const FlashSales = () => {
   const flashSaleItems = [
     { id: 1, name: "Organic Apples", originalPrice: 200000.99, price: 190342.99, image: rice },
-    { id: 2, name: "Fresh Carrots", originalPrice: 18939834.99, price: 238984.99, image: cocoyam },
-    { id: 3, name: "Farm Eggs", originalPrice: 48394832233.99, price: 498932.99, image: pepper },
+    { id: 2, name: "Fresh Carrots", originalPrice: 18939834.99, price: 238984.99, image: tomato },
+    { id: 3, name: "Farm Eggs", originalPrice: 48394832233.99, price: 498932.99, image: rice },
     { id: 4, name: "Organic Milk", originalPrice: 4438398.99, price: 983283.99, image: tomato},
   ]
 
@@ -73,7 +70,7 @@ const FlashSales = () => {
 
  
   return (
-    <section className="my-12 bg-gradient-to-r from-green-400 to-[#15803d] rounded-3xl overflow-hidden shadow-2xl">
+    <section className="my-12 bg-gradient-to-r from-green-100 to-[#daffe8] rounded-3xl overflow-hidden shadow-2xl">
       <div className="bg-white bg-opacity-5 p-8">
         <div className="flex flex-col md:flex-row items-center justify-between mb-6">
           <div className="flex items-center mb-4 md:mb-0">

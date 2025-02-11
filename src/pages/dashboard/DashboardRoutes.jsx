@@ -9,7 +9,7 @@ import Messages from './Messages';
 import Profile from './Profile';
 import Help from './Help';
 import Reports from './Reports';
-import Sidebar from './Sidebar';
+// import Sidebar from './Sidebar';
 import NotFound from '../NotFound';
 import Products from './Products';
 import FarmerWallet from './FarmerWallet';
@@ -47,7 +47,7 @@ function DashboardRoutes() {
         }
 
   
-          <Route path='sort' element={<Sidebar />} />
+
           <Route path="orders" element={usertype === 'farmer' ? <OrdersList /> : <BuyerOrdersList /> } />
           <Route path="orders/:id" element={<OrderDetails />} />
           <Route path="messages" element={<Messages />} />

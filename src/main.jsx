@@ -3,21 +3,19 @@ import { createRoot } from 'react-dom/client';
 import './index.css';
 
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
-import Navbar from './components/Navbar';
+
 import Footer from './components/Footer';
 import OrderCompletedPage from './components/OrderCompleted';
 import OTPVerification from './pages/OTPVerification';
 import LoadingSpinner from './components/LoadingSpinner';
 import { SidebarProvider } from './context/SidebarContext';
-import AnotherHeaderAgain from './components/AnotherHeaderAgain';
+import Navbar from './components/Navbar';
 
 // Lazy-loaded pages
 const Home = lazy(() => import('./pages/Home'));
-const Reg = lazy(() => import('./pages/Reg'));
+const Register = lazy(() => import('./pages/Register'));
 const Login = lazy(() => import('./pages/Login'));
 const About = lazy(() => import('./pages/About'));
-// const AllCategories = lazy(() => import('./pages/AllCategories'));
-// const CategoryProduct = lazy(() => import('./pages/CategoryProducts'));
 const DashboardRoutes = lazy(() => import('./pages/dashboard/DashboardRoutes'));
 const Contact = lazy(() => import('./pages/Contact'));
 const Products = lazy(() => import('./pages/Products'));
@@ -38,8 +36,8 @@ const Main = () => {
   return (
     <>
       <SidebarProvider>
-      {!isDashboardRoute && <AnotherHeaderAgain />}
-
+      {!isDashboardRoute && <Navbar />}
+   
 
       
       {/* Wrap routes in Suspense to handle lazy loading */}
@@ -48,7 +46,7 @@ const Main = () => {
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/about" element={<About />} />
-          <Route path="/register" element={<Reg />} />
+          <Route path="/register" element={<Register />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/products" element={<Products />} />
           <Route path="/product-detail" element={<ProductDetail />} />

@@ -15,10 +15,6 @@ export default () => {
       <TestimonialItem />
       <TestimonialItem />
       <TestimonialItem />
-      <TestimonialItem />
-      <TestimonialItem />
-
-   
     </div>
   </div>
 </section>

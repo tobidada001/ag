@@ -32,14 +32,14 @@
 
 
 
-import { MapPin, Star } from 'lucide-react';
+import { FileQuestion, MapPin, Star } from 'lucide-react';
 import { Link } from "react-router-dom";
 
 
 // product isBestSelling
 
 
-const ProductCard = ({ product, isBestSelling }) => {
+const ProductCard = ({ product, isBestSelling, isSponsored }) => {
   const originalPrice = parseFloat(product.originalPrice || product.price);
   const currentPrice = parseFloat(product.price);
   const isDiscounted = originalPrice > currentPrice;
@@ -93,6 +93,8 @@ const ProductCard = ({ product, isBestSelling }) => {
             )}
           </div>
         </div>
+
+        {isSponsored && <p className='text-sm text-gray-400'>Sponsored</p> }
         <button className="mt-3 w-full bg-green-500 text-white px-4 py-2 rounded-full text-sm hover:bg-green-600 transition-colors duration-300">
           Add to Cart
         </button>
