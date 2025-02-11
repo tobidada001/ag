@@ -72,7 +72,7 @@ const FlashSales = () => {
   return (
     <section className="my-12 bg-gradient-to-r from-green-100 to-[#daffe8] rounded-3xl overflow-hidden shadow-2xl">
       <div className="bg-white bg-opacity-5 p-8">
-        <div className="flex flex-col md:flex-row items-center justify-between mb-6">
+        <div className="flex flex-col lg:flex-row items-center justify-between mb-6">
           <div className="flex items-center mb-4 md:mb-0">
             <Zap className="h-12 w-12 text-yellow-400 mr-4" />
             <h2 className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-orange-600">
