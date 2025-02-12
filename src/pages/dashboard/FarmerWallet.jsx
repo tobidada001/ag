@@ -14,9 +14,11 @@ import {
   ShoppingCart,
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useUserType } from "../../context/UserTypeContext";
 
 const FarmerWallet = () => {
-  const usertype = localStorage.getItem("usertype");
+  const { userType } = useUserType();
+  const usertype = userType
   const [activeTab, setActiveTab] = useState("overview");
   const [walletData, setWalletData] = useState(null);
 
@@ -274,11 +276,10 @@ const FarmerWallet = () => {
 
                 {/* View Transaction History */}
                 <Link
-                  to={"/dashboard/transaction-history"}
+                  to={"/dashboard/transactions"}
                   className="flex items-center justify-center bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                 >
                   <List
-                    to={"/dashboard/transactions"}
                     className="h-5 w-5 mr-2"
                   />
                   View Transaction History

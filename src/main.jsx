@@ -10,6 +10,7 @@ import OTPVerification from './pages/auth/OTPVerification';
 import LoadingSpinner from './components/LoadingSpinner';
 import { SidebarProvider } from './context/SidebarContext';
 import Navbar from './components/Navbar';
+import { UserTypeProvider } from './context/UserTypeContext';
 
 // Lazy-loaded pages
 const Home = lazy(() => import('./pages/Home'));
@@ -68,10 +69,12 @@ const Main = () => {
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
+  <UserTypeProvider>
     <div className="flex flex-col justify-between min-h-screen">
       <Router>
         <Main />
       </Router>
     </div>
+    </UserTypeProvider>
   </StrictMode>
 );

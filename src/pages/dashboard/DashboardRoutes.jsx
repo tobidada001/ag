@@ -21,11 +21,14 @@ import Transactions from './Transactions';
 import BankAccounts from './BankAccounts';
 import Wishlist from './Wishlist';
 import Notifications from './Notifications';
+import { useUserType } from '../../context/UserTypeContext';
+// import { useUserType } from '../../context/UserTypeContext';
 
 
 
 function DashboardRoutes() {
-  const usertype = localStorage.getItem('usertype');
+  const { userType } = useUserType();
+  const usertype = userType;
 
 
   return (

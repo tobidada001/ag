@@ -1,9 +1,11 @@
 import React from 'react';
 import { Package, ShoppingCart, DollarSign, Truck, Wallet, Ship } from 'lucide-react';
+import { useUserType } from '../../context/UserTypeContext';
 
 const Dashboard = () => {
   const stats = []
-  const usertype = localStorage.getItem('usertype')
+  const { userType } = useUserType();
+  const usertype = userType;
   // Sample data
   if (usertype === 'farmer') {
     stats.push(

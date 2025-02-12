@@ -4,13 +4,16 @@ import logo from '../../assets/icons/agripathwaylogo.png'
 import { Menu, X, Home, ShoppingCart, Package, User, ClipboardList, Search, Bell, User2, LogOut, GitGraph, DollarSign, Gift } from 'lucide-react';
 import LogoutModal from '../../components/LogoutModal';
 import Topbar from '../../components/Topbar';
+import { useUserType } from '../../context/UserTypeContext';
 
 
 const DashboardLayout = ({ children }) => {
   const navigate = useNavigate();
   
   // const usertype = 'farmer';
-  const usertype = localStorage.getItem('usertype');
+  const { userType } = useUserType();
+
+  const usertype = userType;
 
   
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);

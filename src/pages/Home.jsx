@@ -11,16 +11,10 @@ import BestSellingProducts from '../components/BestSellingProducts';
 import SponsoredProducts from '../components/SponsoredProducts';
 import HomeCarouselCategories from '../components/HomeCarouselCategories';
 import BannerCarousel from '../components/BannerCarousel';
+import { useUserType } from '../context/UserTypeContext';
 
 const Home = () => {
   const [imageLoaded, setImageLoaded] = useState(false);
-
-  const navigator = useNavigate()
-
-  const handleUserType = (e) =>{
-    localStorage.setItem('usertype', e.target.id)
-    navigator('/dashboard')
-  }
 
   useEffect(() => {
     // Create an image object to check if the background image has loaded
@@ -31,22 +25,32 @@ const Home = () => {
     };
   }, []);
 
+  const { setUserType } = useUserType();
 
   const setAccountType = (e) => {
-    localStorage.setItem('usertype', e.target.value)
+    // localStorage.setItem('usertype', e.target.value)
+    setUserType(e.target.value)
     console.log('User type: ', e.target.value)
     
   }
+
+
+
+  // const changeUserType = (newType) => {
+  //   localStorage.setItem("usertype", newType);
+  //   setUserType(newType);
+  // };
+
 
   return (
     <>
     <div className='flex md:flex-row flex-col container'>
           <span>
-          <input type='radio' name='usertype' id='buyer' value={'buyer'} onClick={setAccountType}/> Buyer
+          <input type='radio' id='buyer' value={'buyer'} onClick={setAccountType}/> Buyer
           </span>
 
           <span>
-          <input type='radio' name='usertype' id='farmer' value={'farmer'} onClick={setAccountType} /> Farmer
+          <input type='radio' id='farmer' value={'farmer'} onClick={setAccountType} /> Farmer
           </span>
           <Link to={'/dashboard'} className='py-1 px-2 rounded-md bg-green-600 text-white'>Go to Dashboard</Link>
 

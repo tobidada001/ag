@@ -1,8 +1,11 @@
 import React, { useState } from "react"
 import { User, Shield, Settings, Upload, Save, X, ChevronDown, AlertCircle } from "lucide-react"
+import { useUserType } from "../../context/UserTypeContext";
 
 const Profile = () => {
-  const usertype = localStorage.getItem('usertype')
+  const { userType } = useUserType();
+
+  const usertype = userType
   const [activeTab, setActiveTab] = useState("profile")
   const [profileImage, setProfileImage] = useState(null)
   const [verificationDoc, setVerificationDoc] = useState(null)
