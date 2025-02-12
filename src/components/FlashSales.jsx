@@ -90,34 +90,7 @@ const FlashSales = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-4 lg:gap-6">
           {flashSaleItems.map((item) => (
             <>
-
             <ProductCard product={item}/>
-
-
-            {/* <div
-              key={item.id}
-              className="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-xl"
-            >
-              <div className="relative">
-                <img src={item.image || "/placeholder.svg"} alt={item.name} className="w-full h-48 object-cover" />
-                <div className="absolute top-0 right-0 bg-orange-600 text-white px-2 py-1 m-2 rounded-md text-sm font-semibold">
-                  {Math.round(((item.price - item.discountPrice) / item.price) * 100)}% OFF
-                </div>
-              </div>
-              <div className="p-4">
-                <h3 className="font-semibold text-lg mb-2">{item.name}</h3>
-                <div className="flex justify-between flex-wrap items-center">
-                  <div className="flex flex-wrap">
-                    <span className="text-gray-500 line-through">₦{item.price.toFixed(2)}</span>
-                    <span className="text-orange-600 font-bold ml-2">₦{item.discountPrice.toFixed(2)}</span>
-                  </div>
-                  <button className="bg-green-500 text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-green-600 transition-colors duration-300">
-                    Add to Cart
-                  </button>
-                </div>
-              </div>
-            </div> */}
-
             </>
           ))}
         </div>

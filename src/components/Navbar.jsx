@@ -4,27 +4,14 @@ import { useState, useEffect, useRef } from "react"
 import { Search, ShoppingCart, User, Menu, X, ChevronDown } from "lucide-react"
 import logo from '../assets/icons/agripathwaylogo.png';
 import { Link } from "react-router-dom";
+import CategoryList from "./CategoryList";
 
-
-// import { categories } from "../data/categories"
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isCategoryOpen, setIsCategoryOpen] = useState(false)
   const menuRef = useRef(null)
 
-  const categories =  [
-    "Fruits & Vegetables",
-    "Grains & Cereals",
-    "Dairy & Eggs",
-    "Meat & Poultry",
-    "Fish & Seafood",
-    "Herbs & Spices",
-    "Farm Equipment",
-    "Seeds & Seedlings",
-    "Organic Products",
-    "Animal Feed",
-  ]
 
   useEffect(() => {
     const handleEscape = (event) => {
@@ -80,7 +67,7 @@ const Navbar = () => {
               <div className="relative">
                 <input
                   type="search"
-                  placeholder="Search products, categories, and brands"
+                  placeholder="Search products and categories"
                   className="w-full py-2 px-4 pr-10 rounded-md text-gray-800 focus:outline-none focus:ring-2 focus:ring-green-500"
                 />
                 <button type="submit" className="absolute bg-yellow-400 py-[9px] rounded-tr-md rounded-br-md px-4 right-0 top-0 mr-0">
@@ -105,7 +92,7 @@ const Navbar = () => {
             <div className="relative">
               <input
                 type="search" name="search"
-                placeholder="Search products, categories, and brands"
+                placeholder="Search products and categories"
                 className="w-full py-2 px-4 pr-10 rounded-md text-gray-800 focus:outline-none focus:ring-2 focus:ring-green-500"
               />
               <button type="submit" className="absolute bg-yellow-400 py-[9px] rounded-tr-md rounded-br-md px-4 right-0 top-0 mr-0">
@@ -181,7 +168,10 @@ const Navbar = () => {
                   />
                 </button>
                 {isCategoryOpen && (
-                  <ul className="pl-4 mt-2 space-y-2">
+                  <>
+                  <CategoryList onNav={true} />
+                 
+                  {/* <ul className="pl-4 mt-2 space-y-2">
                     {categories.map((category, index) => (
                       <li key={index}>
                         <Link to={`/products?category=${category}`} className="block py-1 text-gray-600 hover:text-white">
@@ -189,7 +179,8 @@ const Navbar = () => {
                         </Link>
                       </li>
                     ))}
-                  </ul>
+                  </ul> */}
+                  </>
                 )}
               </li>
              

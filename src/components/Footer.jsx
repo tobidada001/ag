@@ -63,7 +63,7 @@ export default () => {
                 />
                 <button
                   type="submit"
-                  className="bg-yellow-500 hover:bg-yellow-600 px-4 py-2 rounded-r-md text-white font-bold"
+                  className="bg-yellow-400 hover:bg-yellow-500 px-4 py-2 rounded-r-md text-white font-bold"
                 >
                   Subscribe
                 </button>
