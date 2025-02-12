@@ -1,12 +1,17 @@
 import React, { useState } from 'react';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 import logo from '../../assets/icons/agripathwaylogo.png'
-import { Menu, X, Home, ShoppingCart, Package, User, ClipboardList, Search, Bell, User2, LogOut, GitGraph, DollarSign } from 'lucide-react';
+import { Menu, X, Home, ShoppingCart, Package, User, ClipboardList, Search, Bell, User2, LogOut, GitGraph, DollarSign, Gift } from 'lucide-react';
 import LogoutModal from '../../components/LogoutModal';
+import Topbar from '../../components/Topbar';
 
 
 const DashboardLayout = ({ children }) => {
   const navigate = useNavigate();
+  
+  // const usertype = 'farmer';
+  const usertype = localStorage.getItem('usertype');
+
   
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
@@ -29,10 +34,6 @@ const DashboardLayout = ({ children }) => {
     setIsSidebarOpen(false);
   };
 
-
-
-
-  const usertype = localStorage.getItem('usertype');
 
  
 
@@ -57,6 +58,8 @@ const DashboardLayout = ({ children }) => {
           <CustomNavLink to="/dashboard/wallet" icon={<User size={20} />}>Wallet</CustomNavLink>
           {usertype==='farmer' &&  <CustomNavLink to="/dashboard/products" icon={<Package size={20} />}>Products</CustomNavLink> }
           <CustomNavLink to="/dashboard/orders"  icon={<ClipboardList size={20} />}>Orders</CustomNavLink>
+          {usertype==='buyer' &&  <CustomNavLink to="/dashboard/wishlist" icon={<Gift size={20} />}>Wishlist</CustomNavLink> }
+
           <CustomNavLink to="/dashboard/transactions"  icon={<DollarSign size={20} />}>Transactions</CustomNavLink>
           <CustomNavLink to="/dashboard/profile" icon={<User2 size={20} />}>Profile</CustomNavLink>
         
@@ -67,13 +70,17 @@ const DashboardLayout = ({ children }) => {
         </nav>
 
           <div className='absolute left-0 right-0 bottom-4 text-center'>
-        <button className='py-1 px-3 mx-auto bg-green-200 text-sm rounded-xl font-semibold text-green-800'>Verified</button>
+        <Link to={'/dashboard/profile'} className='py-1 px-3 mx-auto bg-green-200 text-sm rounded-xl font-semibold text-green-800'>Verified</Link>
         </div>
       </aside>
 
       {/* Main Content */}
       <div className="flex-1 flex flex-col overflow-hidden">
-        {/* Top Bar */}
+
+          <Topbar toggleSidebar={toggleSidebar} openModal={openModal}/>
+
+
+        {/* Top Bar
         <header className="bg-white shadow-md z-10">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center justify-between h-16">
@@ -112,7 +119,7 @@ const DashboardLayout = ({ children }) => {
               </div>
             </div>
           </div>
-        </header>
+        </header> */}
 
         {/* Page Content */}
         <main className="flex-1 overflow-x-hidden overflow-y-auto bg-gray-100">

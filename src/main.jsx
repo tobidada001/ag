@@ -6,24 +6,23 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-route
 
 import Footer from './components/Footer';
 import OrderCompletedPage from './components/OrderCompleted';
-import OTPVerification from './pages/OTPVerification';
+import OTPVerification from './pages/auth/OTPVerification';
 import LoadingSpinner from './components/LoadingSpinner';
 import { SidebarProvider } from './context/SidebarContext';
 import Navbar from './components/Navbar';
 
 // Lazy-loaded pages
 const Home = lazy(() => import('./pages/Home'));
-const Register = lazy(() => import('./pages/Register'));
-const Login = lazy(() => import('./pages/Login'));
+const Register = lazy(() => import('./pages/auth/Register'));
+const Login = lazy(() => import('./pages/auth/Login'));
 const About = lazy(() => import('./pages/About'));
 const DashboardRoutes = lazy(() => import('./pages/dashboard/DashboardRoutes'));
 const Contact = lazy(() => import('./pages/Contact'));
 const Products = lazy(() => import('./pages/Products'));
 const ProductDetail = lazy(() => import('./pages/ProductDetail'));
-const Wishlist = lazy(() => import('./pages/Wishlist'));
-const Checkout = lazy(() => import('./pages/Checkout'));
-const Cart = lazy(() => import('./pages/Cart'));
-const OrderTracking = lazy(() => import('./pages/OrderTracking'));
+const Checkout = lazy(() => import('./pages/orders/Checkout'));
+const Cart = lazy(() => import('./pages/orders/Cart'));
+const OrderTracking = lazy(() => import('./pages/orders/OrderTracking'));
 const LiveChat = lazy(() => import('./pages/LiveChat'));
 const NotFound = lazy(() => import('./pages/NotFound'));
 
@@ -50,7 +49,6 @@ const Main = () => {
           <Route path="/contact" element={<Contact />} />
           <Route path="/products" element={<Products />} />
           <Route path="/product-detail" element={<ProductDetail />} />
-          <Route path="/wishlist" element={<Wishlist />} />
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/order-completed" element={<OrderCompletedPage />} />

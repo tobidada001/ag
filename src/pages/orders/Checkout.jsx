@@ -1,4 +1,5 @@
-import OrderItem from "../components/OrderItem";
+import { Link } from "react-router-dom";
+import OrderItem from "../../components/OrderItem";
 
 export default () => {
   return (
@@ -156,15 +157,16 @@ export default () => {
 
           {/* <!-- Action Buttons --> */}
           <div className="flex flex-col gap-4 mt-6">
+          <Link to={'/order-completed'}>
             <button className="w-full bg-green-700 hover:bg-green-600 text-white py-3 rounded-md font-bold">
               Proceed to Checkout
             </button>
-            <a
-              href="#"
+            </Link>
+            <Link to={'/products'}
               className="w-full text-center bg-yellow-100 hover:bg-yellow-200 text-gray-700 py-3 rounded-md font-bold"
             >
               Back to Shop
-            </a>
+            </Link>
           </div>
         </div>
       </div>

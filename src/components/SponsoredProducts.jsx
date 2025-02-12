@@ -6,6 +6,7 @@ import potato from "../assets/images/potato.jpeg";
 import pepper from "../assets/images/pepper.jpeg";
 import { ChevronRight } from "lucide-react";
 import ProductCard from "./ProductCard";
+import { Link } from "react-router-dom";
 const SponsoredProducts = () => {
   const sponsoredItems = [
     { id: 1, name: "Premium Fertilizer", brand: "GreenGrow", image: rice, price: 20000 },
@@ -19,9 +20,9 @@ const SponsoredProducts = () => {
       <div className="mt-10 mb-8 flex gap-y-5 flex-col sm:flex-row items-center justify-between ">
         <h2 className="text-3xl text-center  md:text-4xl font-bold text-gray-800">Sponsored Products</h2>
         
-         <button className="bg-white text-green-600 px-6 py-2 rounded-full font-semibold shadow-sm hover:bg-green-50 transition-all duration-300 flex items-center group">
+         <Link to={'/products?type=sponsored-products'} className="bg-white text-green-600 px-6 py-2 rounded-full font-semibold shadow-sm hover:bg-green-50 transition-all duration-300 flex items-center group">
             See All <ChevronRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
-        </button>
+        </Link>
      
       </div>
 

@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import { Search, Eye, Truck, X } from 'lucide-react';
 import { useLocation, useNavigate } from 'react-router-dom';
+import Pagination from '../../components/Pagination';
 
 const OrdersList = () => {
   const [searchTerm, setSearchTerm] = useState('');
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [selectedOrder, setSelectedOrder] = useState(null);
   const navigate = useNavigate();
 
   const [orders, setOrders] = useState([
@@ -22,8 +21,6 @@ const OrdersList = () => {
   );
 
   const handleViewOrder = (order) => {
-    // setSelectedOrder(order);
-    // setIsModalOpen(true);
     navigate('/dashboard/orders/6')
   };
 
@@ -96,37 +93,8 @@ const OrdersList = () => {
         </table>
       </div>
 
-      {isModalOpen && selectedOrder && (
-        <div className="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full" id="my-modal">
-          <div className="relative top-20 mx-auto p-5 border w-96 shadow-lg rounded-md bg-white">
-            <div className="mt-3">
-              <h3 className="text-lg leading-6 font-medium text-gray-900 mb-2">Order Details</h3>
-              <button 
-                onClick={() => setIsModalOpen(false)} 
-                className="absolute top-0 right-0 mt-4 mr-4 text-gray-500 hover:text-gray-600"
-              >
-                <X size={18} />
-              </button>
-              <div className="mt-2 text-sm text-gray-500">
-                <p><strong>Order ID:</strong> #{selectedOrder.id}</p>
-                <p><strong>Customer:</strong> {selectedOrder.customerName}</p>
-                <p><strong>Product:</strong> {selectedOrder.product}</p>
-                <p><strong>Quantity:</strong> {selectedOrder.quantity}</p>
-                <p><strong>Total:</strong> ${selectedOrder.total.toFixed(2)}</p>
-                <p><strong>Status:</strong> {selectedOrder.status}</p>
-              </div>
-              <div className="mt-4">
-                <button
-                  onClick={() => setIsModalOpen(false)}
-                  className="bg-green-500 text-white active:bg-green-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-                >
-                  Close
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
+    
+            <Pagination />
     </div>
   );
 };

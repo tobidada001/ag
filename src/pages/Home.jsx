@@ -34,13 +34,29 @@ const Home = () => {
 
   const setAccountType = (e) => {
     localStorage.setItem('usertype', e.target.value)
+    console.log('User type: ', e.target.value)
     
   }
 
   return (
     <>
+    <div className='flex md:flex-row flex-col container'>
+          <span>
+          <input type='radio' name='usertype' id='buyer' value={'buyer'} onClick={setAccountType}/> Buyer
+          </span>
+
+          <span>
+          <input type='radio' name='usertype' id='farmer' value={'farmer'} onClick={setAccountType} /> Farmer
+          </span>
+          <Link to={'/dashboard'} className='py-1 px-2 rounded-md bg-green-600 text-white'>Go to Dashboard</Link>
+
+      </div>
+
 
       <div className='flex md:mx-6 lg:mx-20 mt-5'>
+
+        
+
         <HomeCarouselCategories />
 
         <BannerCarousel />

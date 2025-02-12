@@ -3,6 +3,7 @@ import { ChevronRight, Zap } from "lucide-react"
 import rice from "../assets/images/rice.jpeg";
 import tomato from "../assets/images/tomato.jpeg";
 import ProductCard from "./ProductCard";
+import { Link } from "react-router-dom";
 
 const CountdownTimer = ({ endTime }) => {
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft())
@@ -82,9 +83,9 @@ const FlashSales = () => {
           </div>
           <div className="flex flex-col sm:flex-row items-center space-x-4">
             <CountdownTimer endTime={endTime} />
-            <button className="bg-white text-green-600 px-6 py-2 rounded-full font-semibold shadow-md hover:bg-green-50 transition-all duration-300 flex items-center group">
+            <Link to={'/products?type=flash-sales'} className="bg-white text-green-600 px-6 py-2 rounded-full font-semibold shadow-md hover:bg-green-50 transition-all duration-300 flex items-center group">
               See All <ChevronRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
-            </button>
+            </Link>
           </div>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-4 lg:gap-6">

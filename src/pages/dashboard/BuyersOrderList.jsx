@@ -6,8 +6,7 @@ import Pagination from "../../components/Pagination"
 const BuyerOrdersList = () => {
   const [searchTerm, setSearchTerm] = useState("")
   const [statusFilter, setStatusFilter] = useState("")
-  const [isModalOpen, setIsModalOpen] = useState(false)
-  const [selectedOrder, setSelectedOrder] = useState(null)
+
   const navigate = useNavigate()
 
   const [orders, setOrders] = useState([
@@ -149,69 +148,13 @@ const BuyerOrdersList = () => {
                   <button className="text-red-600 hover:text-red-900 mr-3">
                     <X size={18} />
                   </button>
-                  {/* <button onClick={() => handleOpenModal(order)} className="text-blue-600 hover:text-blue-900">
-                    <HelpCircle size={18} />
-                  </button> */}
+                 
                 </td>
               </tr>
             ))}
           </tbody>
         </table>
       </div>
-
-      {isModalOpen && selectedOrder && (
-        <div className="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full" id="my-modal">
-          <div className="relative top-20 mx-auto p-5 border w-96 shadow-lg rounded-md bg-white">
-            <div className="mt-3">
-              <h3 className="text-lg leading-6 font-medium text-gray-900 mb-2">Order Details</h3>
-              <button
-                onClick={() => setIsModalOpen(false)}
-                className="absolute top-0 right-0 mt-4 mr-4 text-gray-500 hover:text-gray-600"
-              >
-                <X size={18} />
-              </button>
-              <div className="mt-2 text-sm text-gray-500">
-                <p>
-                  <strong>Order ID:</strong> #{selectedOrder.id}
-                </p>
-                <p>
-                  <strong>Date:</strong> {selectedOrder.date}
-                </p>
-                <p>
-                  <strong>Status:</strong> {selectedOrder.status}
-                </p>
-                <p>
-                  <strong>Total:</strong> ₦{selectedOrder.total.toFixed(2)}
-                </p>
-                <p>
-                  <strong>Delivery Details:</strong> {selectedOrder.deliveryDetails}
-                </p>
-                <p>
-                  <strong>Items:</strong>
-                </p>
-                <ul>
-                  {selectedOrder.items.map((item, index) => (
-                    <li key={index}>
-                      {item.name} - Quantity: {item.quantity}, Price: ₦{item.price.toFixed(2)}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div className="mt-4">
-                <a
-                  href="/support"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-                >
-                  Contact Customer Support
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
-
 
 
       <Pagination />

@@ -19,11 +19,14 @@ import AddPromotion from './AddPromotion';
 import BuyerOrdersList from './BuyersOrderList';
 import Transactions from './Transactions';
 import BankAccounts from './BankAccounts';
+import Wishlist from './Wishlist';
+import Notifications from './Notifications';
 
 
 
 function DashboardRoutes() {
   const usertype = localStorage.getItem('usertype');
+
 
   return (
     // <Router>
@@ -33,10 +36,9 @@ function DashboardRoutes() {
           <Route path='wallet' element={<FarmerWallet />} />
           <Route path='transactions' element={<Transactions />} />
 
-          {usertype === 'farmer' && (
+          {usertype === 'farmer' ? (
           <>
           <Route path='products' element={<Products />} />
-          {/* <Route path='bank' element={<BankAccounts />} /> */}
           <Route path='promotions' element={<PromotionStats />} />
           <Route path='promotions/add' element={<AddPromotion />} />
           <Route path="inventory" element={<Inventory />} />
@@ -44,13 +46,16 @@ function DashboardRoutes() {
           <Route path="reports" element={<Reports />} />
           </>
           )
+          :
+          (<Route path="wishlist" element={<Wishlist />} /> )
         }
 
   
 
           <Route path="orders" element={usertype === 'farmer' ? <OrdersList /> : <BuyerOrdersList /> } />
           <Route path="orders/:id" element={<OrderDetails />} />
-          <Route path="messages" element={<Messages />} />
+         
+          <Route path="notifications" element={<Notifications />} />
           <Route path="profile" element={<Profile />} />
           <Route path="help" element={<Help />} />
           <Route path="*" element={<NotFound />} />

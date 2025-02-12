@@ -24,10 +24,9 @@ const BestSellingProducts = () => {
       <div className="mt-10 mb-8 flex gap-y-5 flex-col sm:flex-row items-center justify-between ">
         <h2 className="text-3xl text-center  md:text-4xl font-bold text-gray-800">Best Selling Products</h2>
         
-        {/* <Link className="flex bg-green-200 px-3 py-1 rounded-full">See All <ChevronRight /></Link> */}
-         <button className="bg-white text-green-600 px-6 py-2 rounded-full font-semibold shadow-sm hover:bg-green-50 transition-all duration-300 flex items-center group">
+         <Link to={'/products?type=best-selling'} className="bg-white text-green-600 px-6 py-2 rounded-full font-semibold shadow-sm hover:bg-green-50 transition-all duration-300 flex items-center group">
             See All <ChevronRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
-        </button>
+        </Link>
      
       </div>
 
@@ -35,26 +34,6 @@ const BestSellingProducts = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {bestSellers.map((item) => (
           <>
-          {/* <div
-            key={item.id}
-            className="bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:scale-105"
-          >
-            <img src={item.image || "/placeholder.svg"} alt={item.name} className="w-full h-48 object-cover" />
-            <div className="p-4">
-              <h3 className="font-semibold text-lg mb-2">{item.name}</h3>
-              <div className="flex justify-between items-center">
-                <span className="text-gray-700 font-bold">₦{item.price.toFixed(2)}</span>
-                <div className="flex items-center">
-                  <span className="text-yellow-500 mr-1">★</span>
-                  <span className="text-gray-600">{item.rating.toFixed(1)}</span>
-                </div>
-              </div>
-              <button className="mt-3 w-full bg-green-500 text-white px-4 py-2 rounded-full text-sm hover:bg-green-600 transition-colors duration-300">
-                Add to Cart
-              </button>
-            </div>
-          </div> */}
-
             <ProductCard key={item.id} product={item} isBestSelling={true} />
           </>
         ))}
