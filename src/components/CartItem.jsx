@@ -14,21 +14,7 @@ export default () =>{
                 <h6 class="text-xs text-red-500 cursor-pointer mt-0.5">Remove</h6>
 
                 <div class="flex gap-4 mt-4">
-                    {/* <div class="relative group">
-                        <button type="button"
-                            class="flex items-center px-2.5 py-1.5 border border-gray-300 text-gray-800 text-xs outline-none bg-transparent rounded-md">
-                            XL
-                            <ChevronDown className=' ml-2.5' height={10} width={10} />
-                        </button>
-
-                        <ul class='group-hover:block hidden absolute rounded-md min-w-[80px] shadow-lg bg-white z-[1000]'>
-                            <li class='py-2 px-4 hover:bg-gray-100 text-gray-800 text-xs cursor-pointer'>SM</li>
-                            <li class='py-2 px-4 hover:bg-gray-100 text-gray-800 text-xs cursor-pointer'>MD</li>
-                            <li class='py-2 px-4 hover:bg-gray-100 text-gray-800 text-xs cursor-pointer'>XL</li>
-                            <li class='py-2 px-4 hover:bg-gray-100 text-gray-800 text-xs cursor-pointer'>XXL</li>
-                        </ul>
-                    </div> */}
-
+                   
                     <div>
                         <button type="button"
                             class="flex items-center px-2.5 py-1.5 border border-gray-300 text-gray-800 text-xs outline-none bg-transparent rounded-md">
